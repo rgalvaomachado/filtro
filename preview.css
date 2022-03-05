@@ -1,0 +1,33 @@
+#html-content-holder{
+    background-image: url('uploads/fundo.jpg');
+    background-size: 500px 500px;
+    height: 500px;
+    width: 500px;
+}
+#logo-claus{
+    float: left;
+    padding-left:0px;
+}
+#img{
+    width: 100px;
+    height:100px;
+}
+#info{
+    position: relative;
+    float: right;
+    right: 10px;
+    top: 400px;
+}
+h5 {
+    text-align: center;
+    margin: 0;
+}
+
+h1{
+    color: greenyellow;
+}
+
+.input{
+    border-radius: 15px 15px 15px 15px;
+    width: 200px;
+}

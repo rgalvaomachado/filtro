@@ -1,68 +1,38 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="html2canvas.js" type="text/javascript"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/font-awesome.min.css" rel="stylesheet">
+	<link href="css/datepicker3.css" rel="stylesheet">
+	<link href="css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <title>Claus Sport</title>
 </head>
 <body>
-    <center>        
-        <div
-            id="html-content-holder"
-            style="
-                background-image: url('uploads/fundo.jpg');
-                background-size: 550px;
-                width: 500px;
-                height: 500px;
-                margin:20px;
-                padding:25px;
-            "
-        > 
-            <div
-                style="
-                    float: left;
-                    width:110x;
-                    padding-left:0px
-                "
-            >
-                <img src="uploads/claus.png" style="width: 100px;height:100px;" />
+    <center>
+        <h1>Um texto legal aqui</h1>
+        <form method="post" action="upload.php" enctype="multipart/form-data">
+            <div class="form-group has-success">
+                <input class="form-control input" type="text" name="sku" placeholder="Código SKU" require>
             </div>
-            <p 
-                style="
-                    align-items: flex-end;
-                "
-            >
-                Aqui vemos que o Palmeiras não tem mundial
-            </p>
-           
-        </div>
-
-        <input id="btn_convert" type="button" value="Download" />
-        <div id="previewImg" style="display: none;">
-        </div>
+            <div class="form-group has-success">
+                <input class="form-control input"  type="number" name="price" min="0.00" max="10000.00" step="0.01" placeholder="Preço do Produto" require>
+            </div>
+            <div class="form-group has-success">
+                <select class="form-control input" name="model" require>
+                    <option value="1">Padrão</option>
+                    <option value="2">Esporte</option>
+                    <option value="3">Lazer</option>
+                </select>
+            </div>
+            <input type="file" name="file" id="upload" hidden/>
+            <label id="upload" for="upload"></label>
+            <br>
+            <button type="submit" class="btn btn-sm btn-success input">Criar Imagem</button>
+        </form>
     </center>
-
-    <form method="post" action="upload.php" enctype="multipart/form-data">
-        <label>Arquivo:</label>
-        <input type="file" name="arquivo" />
-        <input type="submit" value="Enviar" />
-    </form>
-
-    <script>
-        document.getElementById("btn_convert").addEventListener("click", function() {
-		html2canvas(document.getElementById("html-content-holder"),
-			{
-				allowTaint: true,
-				useCORS: true
-			}).then(function (canvas) {
-				var anchorTag = document.createElement("a");
-				document.body.appendChild(anchorTag);
-				document.getElementById("previewImg").appendChild(canvas);
-				anchorTag.download = "filename.jpg";
-				anchorTag.href = canvas.toDataURL();
-				anchorTag.target = '_blank';
-				anchorTag.click();
-			});
-        });
-    </script>
-
 </body>
 </html>
