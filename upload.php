@@ -1,6 +1,6 @@
 <?php
     $_UP['folder'] = 'uploads/'; // folder onde o file vai ser salvo
-    $_UP['size'] = 1024 * 1024 * 2; // 2Mb size máximo do file (em Bytes)
+    $_UP['size'] = 10240; // 2Mb size máximo do file (em Bytes)
     $_UP['extension'] = ['jpg','png','gif','jpeg']; // Array com as extensões permitidas
     
     if ($_FILES['file']['type'] != ""){
@@ -9,7 +9,7 @@
         if (!in_array($extension, $_UP['extension'])) { // Faz a verificação da extensão do file
             echo "Por favor, envie files com as seguintes extensões: jpg, png ou gif";
         }else if ($_UP['size'] < $_FILES['file']['size']) { // Faz a verificação do size do file
-            echo "O file enviado é muito grande, envie files de até 2Mb.";
+            echo "O file enviado é muito grande, envie files de até 10Mb.";
         }else {
             $nome_final = 'fundo.jpg'; // Renomeia o file
         }
