@@ -1,6 +1,6 @@
 <?php
     $_UP['folder'] = 'uploads/'; // folder onde o file vai ser salvo
-    $_UP['size'] = 1024000; // 100Mb size máximo do file (em Bytes)
+    $_UP['size'] = 104857600; // 100Mb size máximo do file (em Bytes)
     $_UP['extension'] = ['jpg','png','gif','jpeg']; // Array com as extensões permitidas
     
     $redirect = "<br><a href='index.php'>Voltar</a>";
@@ -12,7 +12,7 @@
             $message = "Por favor, envie files com as seguintes extensões: jpg, png ou gif.";
         }else if ($_UP['size'] < $_FILES['file']['size']) { // Faz a verificação do tamanho do file
             $sucess = false;
-            $message = "O file enviado é muito grande, envie files de até 20Mb.";
+            $message = "O file enviado é muito grande, envie files de até 100mb";
         }else {
             $nome_final = 'fundo.jpg'; // Renomeia o file
             $sucess = true;
