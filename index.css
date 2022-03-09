@@ -12,9 +12,12 @@ label#upload{
 }
 .input{
     border-radius: 15px 15px 15px 15px;
-    width: 400px;
 }
 
 input[type="file"] {
     display: none;
+}
+
+h1{
+    color: greenyellow;
 }

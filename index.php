@@ -13,7 +13,7 @@
 </head>
 <body>
     <center>
-        <h1>Um texto legal aqui</h1>
+        <h1><strong>CRIADOR DE IMAGENS</strong></h1>
         <form method="post" action="upload.php" enctype="multipart/form-data">
             <div class="form-group has-success">
                 <input class="form-control input" type="text" name="sku" placeholder="Código SKU" require>
@@ -34,5 +34,7 @@
             <button type="submit" class="btn btn-sm btn-success input">Criar Imagem</button>
         </form>
     </center>
+    <script src="jquery-3.6.0.js" type="text/javascript"></script>
+    <script src="index.js" type="text/javascript"></script>
 </body>
 </html>
