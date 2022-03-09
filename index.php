@@ -34,7 +34,7 @@
             <button type="submit" class="btn btn-sm btn-success input">Criar Imagem</button>
         </form>
     </center>
-    <script src="jquery-3.6.0.js" type="text/javascript"></script>
+    <script src="libs/jquery-3.6.0.js" type="text/javascript"></script>
     <script src="index.js" type="text/javascript"></script>
 </body>
 </html>

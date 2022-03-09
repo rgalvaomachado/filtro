@@ -33,8 +33,8 @@
         <a href="index.php"><u>Voltar para edição</u></a>
         <div id="previewImg" style="display: none;"></div>
     </center>
-    <script src="jquery-3.6.0.js" type="text/javascript"></script>
-    <script src="html2canvas.js" type="text/javascript"></script>
+    <script src="libs/jquery-3.6.0.js" type="text/javascript"></script>
+    <script src="libs/html2canvas.js" type="text/javascript"></script>
     <script src="preview.js" type="text/javascript"></script>
 </body>
 </html>
