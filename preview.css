@@ -1,5 +1,6 @@
 #html-content-holder{
     background-image: url('uploads/fundo.jpg');
+    margin: auto;
 }
 #logo-claus{
     float: left;
@@ -20,4 +21,40 @@ h1{
 .input{
     border-radius: 15px 15px 15px 15px;
     width: 200px;
+}
+
+#screen-down{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index:1;
+}
+
+#main{
+    margin-top: 0px;
+    z-index:50;
+    text-align: center;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+@media (min-width: 960px){
+    .download{
+        position: absolute;
+        margin: 0;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+}
+
+@media (max-width: 960px){
+    .download{
+        text-align: center;
+    }
 }

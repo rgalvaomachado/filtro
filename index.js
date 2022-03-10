@@ -6,4 +6,7 @@ if(window.screen.width < 800){
     heightHtml = 500;
 }
 
+$('#title').css('font-size',widthHtml*0.1+"px");
 $('.input').css('width', widthHtml+"px");
+$('#screen-up').css('width', widthHtml*0.8+"px");
+$('#screen-down').css('width', widthHtml*1.5+"px");

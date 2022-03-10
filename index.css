@@ -1,17 +1,28 @@
 label#upload{
     display: inline-block;
     background-image: url("img/upload-image.png");
-    background-size: 100px 100px;
-    height: 100px;
-    width: 100px;
-    background-color: indigo;
-    color: white;
-    font-family: sans-serif;
+    background-size: 300px 300px;
+    height: 300px;
+    width: 300px;
     border-radius: 0.3rem;
     cursor: pointer;
+    border: 10px;
+    border-color: #62d409;
 }
 .input{
-    border-radius: 15px 15px 15px 15px;
+    border-radius: 5px 5px 5px 5px;
+    margin: auto;
+    height: 40px;
+}
+
+#upload-button{
+    margin-top: 20px;
+    border-radius: 5px 5px 5px 5px;
+    width: 200px;
+    color: #dddddd;
+    background-color: #62d409;
+    box-shadow: #dddddd;
+    border: none;
 }
 
 input[type="file"] {
@@ -19,5 +30,49 @@ input[type="file"] {
 }
 
 h1{
-    color: greenyellow;
+    color: #62d409;
+    text-align: center;
+    margin-bottom: 50px;
+}
+#screen-up{
+    position:absolute;
+    float: left;
+    text-align: left;
+}
+#screen-down{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+body{
+    padding: 0px;
+    margin: 0px;
+}
+#main{
+    margin-top: 0px;
+}
+#content{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+@media (min-width: 960px){
+    .upload{
+        position: absolute;
+        margin: 0;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+}
+
+@media (max-width: 960px){
+    .upload{
+        text-align: center;
+    }
 }
