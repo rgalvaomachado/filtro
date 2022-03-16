@@ -38,7 +38,7 @@
                         <br>
                         <button id="btn_convert" type="button" class="btn btn-sm btn-success input">Baixar imagem</button>
                         <br>
-                        <a href="index.php"><u>Voltar para edição</u></a>
+                        <a href="clean.php?img=<?=$_GET['img']?>"   ><u>Voltar para edição</u></a>
                     </div>
                 </div>
             </div>
