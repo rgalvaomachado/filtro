@@ -10,5 +10,5 @@ if(window.screen.width < 800){
 console.log(window.screen.width)
 console.log(window.screen.height)
 
-$('#main').css('width', window.screen.width*.9+"px");
-$('#main').css('height', window.screen.height+"px");
+// $('#main').css('width', window.screen.width*.9+"px");
+// $('#main').css('height', window.screen.height+"px");
