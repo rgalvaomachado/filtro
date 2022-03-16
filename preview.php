@@ -26,7 +26,7 @@
                 <div class="col-sm-12 col-md-6">
                     <div class="download">
                         <div id="html-content-holder"> 
-                            <img id="logo-claus" src="uploads/claus.png"/>
+                            <img id="template" src="img/model-padrao.png"/>
                             <div id='infos'>
                                 <h5 id='info'>R$ <?=number_format($_GET['price'], 2, ',', ' ')?></h5>
                                 <br>

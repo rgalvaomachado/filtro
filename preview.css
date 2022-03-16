@@ -1,8 +1,7 @@
 #html-content-holder{
-    background-image: url('uploads/fundo.jpg');
     margin: auto;
 }
-#logo-claus{
+#template{
     float: left;
 }
 #info{

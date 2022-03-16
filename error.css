@@ -1,0 +1,9 @@
+body{
+    padding: 0px;
+    margin: 0px;
+}
+#main{
+    background-image: url('img/screen-desktop-4-up.png');
+    background-repeat: no-repeat;
+    background-color: aqua;
+}

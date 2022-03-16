@@ -1,38 +1,34 @@
 <?php
     $_UP['folder'] = 'uploads/'; // folder onde o file vai ser salvo
     $_UP['size'] = 104857600; // 100Mb size máximo do file (em Bytes)
+
     $_UP['extension'] = ['jpg','png','gif','jpeg']; // Array com as extensões permitidas
     
-    $redirect = "<br><a href='index.php'>Voltar</a>";
     if ($_FILES['file']['type'] != ""){
         $file = explode("/",$_FILES['file']['type']);
         $extension = $file[1];
         if (!in_array($extension, $_UP['extension'])) { // Faz a verificação da extensão do file
             $sucess = false;
-            $message = "Por favor, envie files com as seguintes extensões: jpg, png ou gif.";
+            $error = 1;
         }else if ($_UP['size'] < $_FILES['file']['size']) { // Faz a verificação do tamanho do file
             $sucess = false;
-            $message = "O file enviado é muito grande, envie files de até 100mb";
+            $error = 2;
         }else {
-            $nome_final = 'fundo.jpg'; // Renomeia o file
+            $img = uniqid().'.jpg'; // Renomeia o file
             $sucess = true;
         }
         if($sucess){
-            if (move_uploaded_file($_FILES['file']['tmp_name'], $_UP['folder'] . $nome_final)) {
+            if (move_uploaded_file($_FILES['file']['tmp_name'], $_UP['folder'] . $img)) {
                 $sku = $_POST['sku'] != "" ? $_POST['sku'] : 0;
                 $price = $_POST['price'] != "" ? $_POST['price'] : 0;
                 $model = $_POST['model'] != "" ? $_POST['model'] : 1;
-                header("location: preview.php?sku=".$sku."&price=".$price."&model=".$model);
+                header("location: preview.php?sku=".$sku."&price=".$price."&model=".$model."&img=".$img);
             }else {
-                echo "Não foi possível enviar o file, tente novamente";
-                echo $redirect;
+                $error = 3;
             }
-        } else {
-            echo $message;
-            echo $redirect;
         }
     }else{
-        echo "Nenhum arquivo foi selecionado";
-        echo $redirect;
+        $error = 4;
     }
+    header("location: error.php?error=".$error);
 ?>
