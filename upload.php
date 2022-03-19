@@ -30,5 +30,7 @@
     }else{
         $error = 4;
     }
-    header("location: error.php?error=".$error);
+    if($error > 0){
+        header("location: error.php?error=".$error);
+    }
 ?>
