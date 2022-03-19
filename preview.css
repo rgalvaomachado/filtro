@@ -1,59 +1,96 @@
-#html-content-holder{
-    margin: auto;
-}
-#template{
-    float: left;
-}
-#info{
-    position: relative;
-    float: right;
-}
-h5 {
-    text-align: center;
-    margin: 0;
-}
 
-h1{
-    color: greenyellow;
-}
-
-.input{
-    border-radius: 15px 15px 15px 15px;
-    width: 200px;
-}
-
-#screen-down{
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    z-index:1;
-}
-
-#main{
-    margin-top: 0px;
-    z-index:50;
-    text-align: center;
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-}
-
-@media (min-width: 960px){
-    .download{
-        position: absolute;
+/*Desktop*/
+@media (min-width: 1024px) {
+    div.container {
         margin: 0;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+    }
+
+    div.row{
+        height: 100vh;
+        width: 100vw;
+    }
+    
+    div.coluna{
         text-align: center;
     }
-}
 
-@media (max-width: 960px){
-    .download{
-        text-align: center;
+    div.preview {
+        width: 70%;
+        background-image: url(Imagens/produto.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        margin: 0 auto;
+        padding: 0;
+        position: relative;
+    }
+
+    p.txtpreco{
+        padding: 0;
+        margin: 0;
+    }
+
+    p.txtsku{
+        padding: 0;
+        margin: 0;
+    }
+
+    p.txtphone{
+        padding: 0;
+        margin: 0;
+    }
+
+    div.textopreco{
+        position: absolute;
+        bottom: 7.4vw;
+        right: 1vw;
+        font-size: 0.95vw;
+        color: white;
+        font-family: Segoe UI;
+    }
+
+    div.textosku{
+        position: absolute;
+        bottom: 5.2vw;
+        right: 1vw;
+        font-size: 0.95vw;
+        color: white;
+        font-family: Segoe UI;
+    }
+
+    div.textophone{
+        position: absolute;
+        bottom: 3.09vw;
+        right: 1vw;
+        font-size: 0.95vw;
+        color: white;
+        font-family: Segoe UI;
+    }
+
+    img.img-produto {
+        width: 100%;
+    }
+
+    button.btn{
+        color: var(--cor-principal);
+        background-color: var(--cor-secundaria);
+        box-shadow: 3px 3px 0px var(--cor-principal);
+        border: none;
+        font-family: Segoe UI;
+        font-weight: 600;
+        width: 60%;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    p.voltar {
+        color: white;
+        font-weight: 500;
+    }
+
+    img.img-backgroud-footer {
+        width: 80vw;
+        position: relative;
+        z-index: -1;
     }
 }

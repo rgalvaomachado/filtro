@@ -1,78 +1,153 @@
-label#upload{
-    display: inline-block;
-    background-image: url("img/upload-image.png");
-    background-size: 300px 300px;
-    height: 300px;
-    width: 300px;
-    border-radius: 0.3rem;
-    cursor: pointer;
-    border: 10px;
-    border-color: #62d409;
-}
-.input{
-    border-radius: 5px 5px 5px 5px;
-    margin: auto;
-    height: 40px;
-}
 
-#upload-button{
-    margin-top: 20px;
-    border-radius: 5px 5px 5px 5px;
-    width: 200px;
-    color: #dddddd;
-    background-color: #62d409;
-    box-shadow: #dddddd;
-    border: none;
-}
+/*Mobile*/
+@media (max-width: 767px) {
 
-input[type="file"] {
-    display: none;
-}
+    div.row{
+        height: 100vh;
+        width: 100vw;
+    }
 
-h1{
-    color: #62d409;
-    text-align: center;
-    margin-bottom: 50px;
-}
-#screen-up{
-    position:absolute;
-    float: left;
-    text-align: left;
-}
-#screen-down{
-    position: absolute;
-    bottom: 0;
-    right: 0;
-}
-body{
-    padding: 0px;
-    margin: 0px;
-}
-#main{
-    margin-top: 0px;
-}
-#content{
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-}
+    img.img-upload {
+        width: 50%;
+        border: solid 1px var(--cor-principal);
+    }
 
-@media (min-width: 960px){
-    .upload{
-        position: absolute;
-        margin: 0;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+    div.coluna {
         text-align: center;
+    }
+
+    div.titulo {
+        margin: 80px 0px 40px 0px;
+    }
+
+    h1 {
+        color: var(--cor-secundaria-dark);
+        font-family: Segoe UI;
+        font-weight: 600;
+    }
+
+    div.form-group {
+        width: 60%;
+        margin: auto;
+        margin-bottom: 20px;
+    }
+
+    div.form-group input{
+        background-color: var(--cor-secundaria);
+        border-color: var(--cor-principal);
+    }
+
+    div.form-group select {
+        background-color: var(--cor-secundaria);
+        border-color: var(--cor-principal);
+    }
+
+    img.img-upload {
+        width: 80%;
+        border: solid 1px var(--cor-principal);
+    }
+
+    button.btn{
+        color: var(--cor-principal);
+        background-color: var(--cor-secundaria);
+        box-shadow: 3px 3px 0px var(--cor-principal);
+        border: none;
+        font-family: Segoe UI;
+        font-weight: 600;
+        width: 50%;
+        margin: 50px 0px 50px 0px;
+    }
+
+    img.img-backgroud-top {
+        width: 60vw;
+    }
+
+    img.img-backgroud-footer {
+        width: 110vw;
+        min-width: 500px;
+        position: relative;
+        z-index: -1;
+    }
+
+    div.fundo-desktop{
+        display: none;
     }
 }
 
-@media (max-width: 960px){
-    .upload{
+/*table*/
+@media (min-width: 768px) and (max-width: 1023px) {
+
+}
+
+/*Desktop*/
+@media (min-width: 1024px) {
+
+    div.container{
+        margin: 0;
+    }
+
+    div.row{
+        height: 100vh;
+        width: 100vw;
+    }
+
+    div.coluna {
         text-align: center;
+    }
+
+    div.titulo {
+        margin-bottom: 60px;
+    }
+
+    h1 {
+        color: var(--cor-secundaria-dark);
+        font-family: Segoe UI;
+        font-weight: 600;
+    }
+
+    div.form-group {
+        width: 80%;
+        margin: auto;
+        margin-bottom: 20px;
+    }
+
+    div.form-group input{
+        background-color: var(--cor-secundaria);
+        border-color: var(--cor-principal);
+    }
+
+    div.form-group select {
+        background-color: var(--cor-secundaria);
+        border-color: var(--cor-principal);
+    }
+
+    img.img-upload {
+        width: 50%;
+        border: solid 1px var(--cor-principal);
+    }
+
+    button.btn{
+        color: var(--cor-principal);
+        background-color: var(--cor-secundaria);
+        box-shadow: 3px 3px 0px var(--cor-principal);
+        border: none;
+        font-family: Segoe UI;
+        font-weight: 600;
+        width: 40%;
+        margin-top: 130px;
+    }
+
+    img.img-backgroud-top {
+        width: 25vw;
+    }
+
+    img.img-backgroud-footer {
+        width: 50vw;
+        position: relative;
+        z-index: -1;
+    }
+
+    div.fundo-mobile{
+        display: none;
     }
 }
