@@ -1,12 +1,6 @@
 <?php
-    // var_dump($_POST);
-    // echo "<br>";
-    // echo "<br>";
-    // var_dump($_FILES);
-    // echo "<br>";
     $_UP['folder'] = 'uploads/'; // folder onde o file vai ser salvo
-    $_UP['size'] = 104857600; // 100Mb size máximo do file (em Bytes)
-
+    $_UP['size'] = 1; // 100Mb size máximo do file (em Bytes)
     $_UP['extension'] = ['jpg','png','gif','jpeg']; // Array com as extensões permitidas
     
     if ($_FILES['file']['type'] != ""){
@@ -27,7 +21,6 @@
                 $sku = $_POST['sku'] != "" ? $_POST['sku'] : 0;
                 $price = $_POST['price'] != "" ? $_POST['price'] : 0;
                 $model = $_POST['model'] != "" ? $_POST['model'] : 1;
-                // echo "Entrou";
                 header("location: preview.php?sku=".$sku."&price=".$price."&model=".$model."&img=".$img);
             }else {
                 $error = 3;

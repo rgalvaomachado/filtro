@@ -1,7 +1,7 @@
 <?php
     switch($_GET['error']){
         case 1:
-            $message = "envie files com as seguintes extensões: jpg, png ou gif.";
+            $message = "a extensão não é permitida, envie novamente com as seguintes extensões: jpg, png ou gif.";
             break;
         case 2:
             $message = "o file enviado é muito grande, envie files de até 100mb";
