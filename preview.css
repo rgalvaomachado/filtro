@@ -16,7 +16,7 @@
 
     div.preview {
         width: 70%;
-        background-image: url(Imagens/produto.jpg);
+        /* background-image: url(img/produto.jpg); */
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;

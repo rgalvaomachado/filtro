@@ -42,7 +42,7 @@
         font-size: 20pt;
     }
 
-    button.btn{
+    a.btn{
         color: var(--cor-erro);
         background-color: var(--cor-secundaria);
         box-shadow: 3px 3px 0px var(--cor-erro);
