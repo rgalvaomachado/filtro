@@ -1,6 +1,6 @@
 <?php
     $_UP['folder'] = 'uploads/'; // folder onde o file vai ser salvo
-    $_UP['size'] = 1; // 100Mb size máximo do file (em Bytes)
+    $_UP['size'] = 104857600; // 100Mb size máximo do file (em Bytes)
     $_UP['extension'] = ['jpg','png','gif','jpeg']; // Array com as extensões permitidas
     
     if ($_FILES['file']['type'] != ""){

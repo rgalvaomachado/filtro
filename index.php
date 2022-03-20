@@ -8,7 +8,6 @@
     <link href="style.css" rel="stylesheet">
     <link href="index.css" rel="stylesheet">
     <link href="bootstrap-5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" >
-
 </head>
 <body>
     <div class="position-relative">
@@ -39,9 +38,10 @@
                 </div>
                 <div class="col-sm-12 col-md-6 coluna">
                     <div>
-                        <input type="file" name="file" id="upload"/>
-                        <label id="upload" for="upload"></label>
-                        <!-- <img class="img-upload" src="img/choice-img.png" alt="Imagem"> -->
+                        <input type="file" name="file" id="upload" onchange="previewFile()" hidden/>
+                        <label id="upload" for="upload">
+                            <img class="img-upload" src="img/choice-img.png" alt="Imagem">
+                        </label>
                     </div>
                     <div>
                         <button type="submit" class="btn btn-lg">Criar Imagem</button>
@@ -58,7 +58,7 @@
             <img id="fundo-mobile" class="img-backgroud-footer" src="img/background-mobile-1.png" alt="Fundo Mobile">
         </div> -->
     </div>
-
+    <script src="index.js" type="text/javascript"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>
