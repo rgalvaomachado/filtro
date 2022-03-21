@@ -41,7 +41,7 @@
                     <div class="img-produto">
                         <input type="file" name="file" id="upload" onchange="previewFile()" hidden/>
                         <label id="upload" for="upload">
-                            <img class="img-upload" src="img/choice-img.png" alt="Imagem">
+                            <div id="img-upload" class="img-upload"></div>
                         </label>
                     </div>
                     <div>

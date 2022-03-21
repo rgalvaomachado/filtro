@@ -1,13 +1,13 @@
 function previewFile() {
-    var preview = document.querySelector('.img-upload');
+    var preview = document.querySelector('#img-upload');
     var file    = document.querySelector('input[type=file]').files[0];
     var reader  = new FileReader();
     reader.onloadend = function () {
-        preview.src = reader.result;
+        preview.style.backgroundImage = "url("+reader.result+")";
     }
     if (file) {
         reader.readAsDataURL(file);
     } else {
-        preview.src = "img/choice-img.png";
+        preview.style.backgroundImage = "url('img/choice-img.png')";
     }
 }

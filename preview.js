@@ -16,7 +16,6 @@ document.getElementById("btn_convert").addEventListener("click", function() {
     }).then(function (canvas) {
         var anchorTag = document.createElement("a");
         document.body.appendChild(anchorTag);
-        // document.getElementById("previewImg").appendChild(canvas);
         anchorTag.download = "luan.jpg";
         anchorTag.href = canvas.toDataURL();
         anchorTag.target = '_blank';
@@ -25,5 +24,4 @@ document.getElementById("btn_convert").addEventListener("click", function() {
     });
 });
 
-console.log(get['img']);
 $("#preview").css("background-image", "url(uploads/"+ get['img'] + ")");

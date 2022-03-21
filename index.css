@@ -12,6 +12,19 @@
         border: solid 1px var(--cor-principal);
     }
 
+    div.img-upload {
+        height: 30vw;
+        width: 30vw;
+        border: solid 1px var(--cor-principal);
+        background-image: url('img/choice-img.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        margin: 0 auto;
+        padding: 0;
+        position: relative;
+    }
+
     div.coluna {
         text-align: center;
     }
@@ -45,6 +58,19 @@
     img.img-upload {
         width: 80%;
         border: solid 1px var(--cor-principal);
+    }
+
+    div.img-upload {
+        height: 30vw;
+        width: 30vw;
+        border: solid 1px var(--cor-principal);
+        background-image: url('img/choice-img.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        margin: 0 auto;
+        padding: 0;
+        position: relative;
     }
 
     button.btn{
@@ -131,6 +157,19 @@
         border: solid 1px var(--cor-principal);
     }
 
+    div.img-upload {
+        height: 30vw;
+        width: 30vw;
+        border: solid 1px var(--cor-principal);
+        background-image: url('img/choice-img.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        margin: 0 auto;
+        padding: 0;
+        position: relative;
+    }
+    
     button.btn{
         color: var(--cor-principal);
         background-color: var(--cor-secundaria);
