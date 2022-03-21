@@ -1,12 +1,6 @@
 
 /*Desktop*/
 @media (min-width: 1024px) {
-    img.img-backgroud-top {
-        margin-top: -140px;
-        width: 100vw;
-        position: relative;
-        z-index: -1;
-    }
 
     div.container{
         margin: 0;
@@ -50,5 +44,16 @@
         font-family: Segoe UI;
         font-weight: 600;
         width: 40%;
+    }
+
+    div.fundo-desktop {
+        z-index: -1;
+    }
+    
+    img.img-backgroud-top {
+        margin-top: -140px;
+        width: 100vw;
+        position: relative;
+        z-index: -1;
     }
 }

@@ -30,8 +30,8 @@
     </head>
     <body>
         <div class="position-relative">
-            <div class="position-absolute top-0 start-0">
-                <!-- <img class="img-backgroud-top" src="img/background-desktop-4.png" alt="logo-claus"> -->
+            <div class="position-absolute top-0 start-0 fundo-desktop">
+                <img class="img-backgroud-top" src="img/background-desktop-4.png" alt="logo-claus">
             </div>
         </div>
         <div class="container">

@@ -38,7 +38,7 @@
                         </div>
                 </div>
                 <div class="col-sm-12 col-md-6 coluna">
-                    <div>
+                    <div class="img-produto">
                         <input type="file" name="file" id="upload" onchange="previewFile()" hidden/>
                         <label id="upload" for="upload">
                             <img class="img-upload" src="img/choice-img.png" alt="Imagem">
@@ -52,9 +52,9 @@
         </div>
     </div>
     <div class="position-relative">
-        <!-- <div class="position-absolute bottom-0 end-0 fundo-desktop">
+        <div class="position-absolute bottom-0 end-0 fundo-desktop">
             <img id="fundo-desktop" class="img-backgroud-footer" src="img/background-desktop-1.png" alt="Fundo Desktop">
-        </div> -->
+        </div>
         <!-- <div class="position-absolute bottom-0 end-0 fundo-mobile">
             <img id="fundo-mobile" class="img-backgroud-footer" src="img/background-mobile-1.png" alt="Fundo Mobile">
         </div> -->

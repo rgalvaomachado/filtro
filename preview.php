@@ -36,7 +36,7 @@
                         </div>
                     </div>
                     <button id="btn_convert" type="submit" class="btn btn-lg">Criar Imagem</button>
-                    <p class="voltar" style="color: black;">
+                    <p class="voltar">
                         <a href="clean.php?img=<?=$_GET['img']?>"><u>Voltar para edição</u></a>
                     </p>
                 </div>
@@ -45,9 +45,9 @@
     </div>
 
     <div class="position-relative">
-        <!-- <div class="position-absolute bottom-0 end-0 fundo-desktop">
+        <div class="position-absolute bottom-0 end-0 fundo-desktop">
             <img id="fundo-desktop" class="img-backgroud-footer" src="img/background-desktop-2.png" alt="Fundo Desktop">
-        </div> -->
+        </div>
     </div>
     <script src="libs/html2canvas.js" type="text/javascript"></script>
     <script src="libs/jquery-3.6.0.js" type="text/javascript"></script>

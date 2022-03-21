@@ -14,9 +14,13 @@
         text-align: center;
     }
 
-    div.preview {
+    div #html-content-holder {
         width: 70%;
-        /* background-image: url(img/produto.jpg); */
+        margin: 0 auto;
+    }
+
+    div.preview {
+        width: 100%;
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
@@ -83,9 +87,13 @@
         margin-bottom: 10px;
     }
 
-    p.voltar {
+    p.voltar u {
         color: white;
         font-weight: 500;
+    }
+
+    div.fundo-desktop {
+        z-index: -1;
     }
 
     img.img-backgroud-footer {

@@ -121,8 +121,13 @@
         border-color: var(--cor-principal);
     }
 
-    img.img-upload {
+    div.img-produto {
         width: 50%;
+        margin: 0 auto;
+    }
+
+    img.img-upload {
+        width: 100%;
         border: solid 1px var(--cor-principal);
     }
 
@@ -144,6 +149,9 @@
     img.img-backgroud-footer {
         width: 50vw;
         position: relative;
+    }
+
+    div.fundo-desktop {
         z-index: -1;
     }
 
