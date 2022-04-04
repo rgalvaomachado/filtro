@@ -1,0 +1,42 @@
+/*All*/
+div.preview {
+    width: 100%;
+    height: 90vh;
+    text-align: center;
+    padding: 0;
+}
+
+div.row {
+    height: 90vh;
+    padding: 0;
+    margin: 0;
+}
+
+div.form {
+    width: 85%;
+    margin: 0 auto;
+}
+
+input {
+    margin: 15px 0px;
+    font-family: Arial;
+}
+
+div.preview img {
+    width: 80%;
+    background-image: url();
+    background-color: var(--cor-principal-dark);;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+button.btn{
+    color: white;
+    background-color: var(--cor-principal);
+    border: none;
+    font-family: Arial;
+    font-weight: 600;
+    width: 60%;
+    margin-top: 20px;
+}

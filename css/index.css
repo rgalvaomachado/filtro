@@ -1,0 +1,38 @@
+/*All*/
+div.modelos img {
+    width: 100%;
+}
+
+div.row {
+    margin-bottom: 50px;
+}
+
+div.col {
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-family: Arial;
+    font-weight: 800;
+    color: var(--cor-principal-dark);
+    font-size: 20pt;
+    margin-bottom: 50px;
+}
+
+div.subtitulo {
+    background-color: var(--cor-principal);
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-family: Arial;
+    font-weight: 600;
+    color: #fff;
+    font-size: 12pt;
+    margin: 0;
+}
+
+div.col img {
+    background-color: var(--cor-principal-dark);
+}
