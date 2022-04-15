@@ -12,9 +12,14 @@ div.row {
     margin: 0;
 }
 
+div #html-content-holder {
+    width: 100%;
+    margin: 0 auto;
+}
+
 div.preview img {
-    width: 80%;
-    background-image: url();
+    width: 100%;
+    background-image: url(../img/choice-img.png);
     background-color: var(--cor-principal-dark);
     background-repeat: no-repeat;
     background-size: cover;

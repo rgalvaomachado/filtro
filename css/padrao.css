@@ -22,10 +22,19 @@ input {
     font-family: Arial;
 }
 
-div.preview img {
+div #html-content-holder {
     width: 80%;
-    background-image: url();
-    background-color: var(--cor-principal-dark);;
+    margin: 0 auto;
+}
+
+div.post{
+    position: relative;
+}
+
+div.preview img {
+    width: 100%;
+    background-image: url(../img/choice-img.png);
+    background-color: var(--cor-principal-dark);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -39,4 +48,115 @@ button.btn{
     font-weight: 600;
     width: 60%;
     margin-top: 20px;
+}
+
+/*Desktop*/
+@media (min-width: 1024px) {
+    p.txtpreco{
+        padding: 0;
+        margin: 0;
+    }
+
+    div.textopreco {
+        position: absolute;
+        bottom: 22%;
+        right: 4%;
+        font-size: 80%;
+        color: white;
+    }
+
+    p.txtsku{
+        padding: 0;
+        margin: 0;
+    }
+
+    div.textosku {
+        position: absolute;
+        bottom: 15%;
+        right: 4%;
+        font-size: 80%;
+        color: white;
+    }
+
+    p.txtpromocao{
+        padding: 0;
+        margin: 0;
+    }
+
+    div.textopromocao {
+        position: absolute;
+        top: 18%;
+        right: 13%;
+        font-size: 120%;
+        font-weight: 600;
+        color: red;
+        font-family: Arial;
+        transform: rotate(-10deg);
+        line-height: 1.1;
+    }
+
+    span.promocao {
+        color: black;
+        font-weight: 900;
+        font-size: 75%;
+
+    }
+}
+
+/*table*/
+@media (min-width: 768px) and (max-width: 1023px) {
+    p.txtpreco{
+        padding: 0;
+        margin: 0;
+    }
+
+    div.textopreco {
+        position: absolute;
+        bottom: 22%;
+        right: 4%;
+        font-size: 100%;
+        color: white;
+    }
+
+    p.txtsku{
+        padding: 0;
+        margin: 0;
+    }
+
+    div.textosku {
+        position: absolute;
+        bottom: 15%;
+        right: 4%;
+        font-size: 100%;
+        color: white;
+    }
+}
+
+/*Mobile*/
+@media (max-width: 767px) {
+    p.txtpreco{
+        padding: 0;
+        margin: 0;
+    }
+
+    div.textopreco {
+        position: absolute;
+        bottom: 22%;
+        right: 4%;
+        font-size: 50%;
+        color: white;
+    }
+
+    p.txtsku{
+        padding: 0;
+        margin: 0;
+    }
+
+    div.textosku {
+        position: absolute;
+        bottom: 15%;
+        right: 4%;
+        font-size: 50%;
+        color: white;
+    }
 }

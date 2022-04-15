@@ -23,42 +23,47 @@
 </head>
 <body>
     <div class="container preview">
-        <div class="row align-items-center">
-            <div class="col col-12 col-lg-6">
-                <div class="form">
-                    <input onchange="atribuirSku()" type="number" name="sku" class="form-control form-control-lg" id="InputSKU" placeholder="Código SKU">
-                    <input onchange="atribuirPreco()" type="number" min="0.00" max="10000.00" step="0.01" name="price" class="form-control form-control-lg" id="InputPrecoAntigo" placeholder="Preço antigo">
-                    <?php if($modelo == 2 ){ ?>
-                        <input onchange="atribuirPromocao()" type="number" min="0.00" max="10000.00" step="0.01" name="price" class="form-control form-control-lg" id="InputPreco" placeholder="Preço atual">
-                    <?php } ?>
-                </div>
-            </div>
-            <div class="col col-12 col-lg-6">
-                <div id="html-content-holder">
-                    <input type="file" name="file" id="upload" onchange="previewFile()" hidden/>
-                    <label id="upload" for="upload">
-                        <img id="img-upload" src="<?=$categoria?>">
-                        <div class="textopreco">
-                            R$: <text id="txtpreco" class="txtpreco">00,00</text>
-                        </div>
-                        <div class="textosku">
-                            SKU: <text id="txtsku" class="txtsku">0</text>
-                        </div>
+        <form id='upload' method="post" action="../download.php" enctype="multipart/form-data">
+            <input type="hidden" name="modelo" value="<?=$categoria?>">
+            <div class="row align-items-center">
+                <div class="col col-12 col-lg-6">
+                    <div class="form">
+                        <input onchange="atribuirSku()" type="number" name="sku" class="form-control form-control-lg" id="InputSKU" placeholder="Código SKU">
+                        <input onchange="atribuirPreco()" type="number" min="0.00" max="10000.00" step="0.01" name="precoAntigo" class="form-control form-control-lg" id="InputPrecoAntigo" placeholder="Preço">
                         <?php if($modelo == 2 ){ ?>
-                            <div class="textopromocao">
-                                Novo Preço R$: <text id="txtpromocao" class="txtpromocao">00,00</text>
-                            </div>
+                            <input onchange="atribuirPromocao()" type="number" min="0.00" max="10000.00" step="0.01" name="precoNovo" class="form-control form-control-lg" id="InputPreco" placeholder="Preço da promoção">
                         <?php } ?>
-                    </label>
+                    </div>
                 </div>
-                <button id="btn_convert" type="submit" class="btn btn-lg">Baixar Imagem</button>
+                <div class="col col-12 col-lg-6">
+                    <div id="html-content-holder">
+                        <div class="post">
+                            <input type="file" name="file" id="upload_in" onchange="previewFile()" hidden/>
+                            <label id="upload" for="upload_in">
+                                <img id="img-upload" src="<?=$categoria?>">
+                            </label>
+                            <div class="textopreco">
+                                <p class="txtpreco">R$: <text id="txtpreco" class="txtpreco"></text> </p>
+                            </div>
+                            <div class="textosku">
+                                <p class="txtsku">SKU: <text id="txtsku" class="txtsku"></text> </p>
+                            </div>
+                            <?php if($modelo == 2 ){ ?>
+                                <div class="textopromocao">
+                                <p class="txtpromocao"><span class="promocao">PROMOÇÃO </span><br/>R$: <text id="txtpromocao" class="txtpromocao"></text></p>
+                                </div>
+                            <?php } ?>
+                        </div>  
+                    </div>
+                    <button id="btn_convert" type="submit" class="btn btn-lg">Baixar Imagem</button>
+                </div>
             </div>
-        </div>
+        </form>
     </div>
-
-    <div class="footer fixed-bottom">
+    <div class="footer">
         <img src="../img/hubis.png">
     </div>
+
 
     <script src="../libs/jquery-3.6.0.js" type="text/javascript"></script>
     <script src="../libs/html2canvas.js" type="text/javascript"></script>
@@ -77,24 +82,9 @@
         if (file) {
             reader.readAsDataURL(file);
         } else {
-            preview.style.backgroundImage = "url('img/choice-img.png')";
+            preview.style.backgroundImage = "url('../img/choice-img.png')";
         }
     }
-
-    document.getElementById("btn_convert").addEventListener("click", function() {
-        html2canvas(document.getElementById("html-content-holder"),{
-            allowTaint: true,
-            useCORS: true
-        }).then(function (canvas) {
-            var anchorTag = document.createElement("a");
-            document.body.appendChild(anchorTag);
-            anchorTag.download = "padrao.jpg";
-            anchorTag.href = canvas.toDataURL();
-            anchorTag.target = '_blank';
-            anchorTag.click();
-            window.location.href = '../index.html';
-        });
-    });
 
     function atribuirSku() {
         var sku = document.getElementById("InputSKU");

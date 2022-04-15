@@ -12,8 +12,15 @@ div.row {
     margin: 0;
 }
 
+div #html-content-holder {
+    width: 50%;
+    margin: 0 auto;
+    background-color: yellowgreen;
+}
+
 div.preview img {
-    height: 70vh;
+    width: 100%;
+    background-image: url(../img/choice-img.png);
     background-color: var(--cor-principal-dark);
     background-repeat: no-repeat;
     background-size: cover;

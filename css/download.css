@@ -1,0 +1,47 @@
+body {
+    padding: 0;
+    margin: 0;
+    /*overflow: hidden;*/
+}
+div.aviso {
+    background-color: #808080;
+    width: 100vw;
+    height: 100vh;
+    padding:0;
+    margin: 0;
+}
+
+#html-content-holder {
+    background-color: #1f1f1f;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 3840px;
+}
+#img-upload {
+    width: 100%;
+}
+
+p.txtpromocao{
+padding: 0;
+margin: 0;
+}
+
+div.textopromocao {
+position: absolute;
+top: 710px;
+left: 2540px;
+font-size: 120pt;
+font-weight: 600;
+color: red;
+font-family: Arial;
+transform: rotate(-10deg);
+line-height: 1.1;
+}
+
+span.promocao {
+color: black;
+font-weight: 900;
+font-size: 75%;
+
+}
