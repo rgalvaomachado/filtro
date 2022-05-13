@@ -1,0 +1,70 @@
+:root {
+    --cor-principal: #00fd00;
+    --cor-principal-dark: #1f1f1f;
+}
+
+@font-face {
+    font-family: Arial;
+    src: url(/fonte/arial-rounded-mt-bold.ttf);
+ }
+
+ /*All*/
+
+ body {
+    padding: 0;
+    margin: 0;
+ }
+
+ div.cabecalho{
+    padding: 0;
+    text-align: center;
+}
+
+ div.footer {
+    background-color: var(--cor-principal-dark);
+    width: 100%;
+    text-align: center;
+}
+
+/*Desktop*/
+@media (min-width: 1024px) {
+    div.cabecalho img {
+        width: 300px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    div.footer img {
+        width: 100px;
+        padding: 20px 0px;
+    }
+}
+
+/*table*/
+@media (min-width: 768px) and (max-width: 1023px) {
+    div.cabecalho img {
+        width: 250px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    div.footer img {
+        width: 100px;
+        margin: 0 auto;
+        padding: 20px 0px;
+    }
+}
+
+/*Mobile*/
+@media (max-width: 767px) {
+    div.cabecalho img {
+        width: 300px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    div.footer img {
+        width: 70px;
+        padding: 20px 0px;
+    }
+}

@@ -1,4 +1,4 @@
-<?php
+<?php 
     unlink('uploads/'.$_GET['img']);
-    header("location: index.php");
+    header("location: index.html");
 ?>
