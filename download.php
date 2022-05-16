@@ -9,7 +9,7 @@
     
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../bootstrap-5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
     <link href="css/style.css" rel="stylesheet">
     <link href="css/download.css" rel="stylesheet">
     <link rel="icon" type="imagem/png" href="../img/logo-page.png" />
@@ -48,11 +48,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
     <script>
-
-// Disable scrolling.
-document.ontouchmove = function (e) {
-  e.preventDefault();
-}
+        // Disable scrolling.
+        document.ontouchmove = function (e) {
+        e.preventDefault();
+        }
     
         $("#html-content-holder").css("background-image", "url(<? echo 'uploads/' . $idImage.'.png' ?>)");
         
