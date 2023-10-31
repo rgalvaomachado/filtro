@@ -23,9 +23,9 @@
                 return $public_url;
             }
     
-            // if (!isset($_SESSION['modo']) || $_SESSION['modo'] == ''){
-            //     $url = "login";
-            // }
+            if (!isset($_SESSION['modo']) || $_SESSION['modo'] == ''){
+                $url = "login";
+            }
     
             if ($url == ""){
                 $url = "home";

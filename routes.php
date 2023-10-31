@@ -8,5 +8,7 @@
         ['login','public/view/login/index.php'],
 
         ['home','public/view/home/index.php'],
+
+        ['categoria','public/view/categoria/index.php'],
     ];
 ?>

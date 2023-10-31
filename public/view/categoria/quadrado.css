@@ -19,7 +19,7 @@ div #html-content-holder {
 
 div.preview img {
     width: 100%;
-    background-image: url(../img/choice-img.png);
+    background-image: url(../../img/choice-img.png);
     background-color: var(--cor-principal-dark);
     background-repeat: no-repeat;
     background-size: cover;

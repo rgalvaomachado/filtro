@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link href="/public/view/login/style.css" rel="stylesheet">
+    <script src="/public/view/login/script.js"></script>
 </head>
-<body>
+<form id="login">
     <h1>Login</h1>
-    <a href="home">Entrar</a>
-</body>
-</html>
+    <button type="submit">Entrar</button>
+</form>

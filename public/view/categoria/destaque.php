@@ -1,6 +1,6 @@
 <?php
-    $modelo = $_GET['modelo'];
-    switch($modelo){
+    $id = $_GET['id'];
+    switch($id){
         case 1:
             $categoria = '../img/filtro_padrao.png';
             break;
@@ -30,7 +30,7 @@
                     <div class="form">
                         <input onchange="atribuirSku()" type="number" name="sku" class="form-control form-control-lg" id="InputSKU" placeholder="Código SKU">
                         <input onchange="atribuirPreco()" type="number" min="0.00" max="10000.00" step="0.01" name="precoAntigo" class="form-control form-control-lg" id="InputPrecoAntigo" placeholder="Preço">
-                        <?php if($modelo == 2 ){ ?>
+                        <?php if($id == 2 ){ ?>
                             <input onchange="atribuirPromocao()" type="number" min="0.00" max="10000.00" step="0.01" name="precoNovo" class="form-control form-control-lg" id="InputPreco" placeholder="Preço da promoção">
                         <?php } ?>
                     </div>
@@ -48,7 +48,7 @@
                             <div class="textosku">
                                 <p class="txtsku">SKU: <text id="txtsku" class="txtsku"></text> </p>
                             </div>
-                            <?php if($modelo == 2 ){ ?>
+                            <?php if($id == 2 ){ ?>
                                 <div class="textopromocao">
                                 <p class="txtpromocao"><span class="promocao">PROMOÇÃO </span><br/>R$: <text id="txtpromocao" class="txtpromocao"></text></p>
                                 </div>
