@@ -18,15 +18,18 @@
             }
     
             $public_url = "public/".$url;
-            
+
             if(is_file($public_url)){
                 return $public_url;
             }
-    
+            
             if (!isset($_SESSION['modo']) || $_SESSION['modo'] == ''){
                 $url = "login";
             }
-    
+            if ($_SESSION['modo'] == 'admin'){
+                $url = "admin";
+            }
+
             if ($url == ""){
                 $url = "home";
             }

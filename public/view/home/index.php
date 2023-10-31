@@ -1,3 +1,6 @@
+<?php
+    include_once('controller/Categoria.php');
+?>
 <head>
     <link href="/public/view/home/style.css" rel="stylesheet">
     <script src="/public/view/home/script.js"></script>
@@ -35,39 +38,34 @@
     <h2>Quadrado</h2>
 </div>
 <div class="grid-container">
-    <div class="grid-item">
-        <div class="quadrado">
-            <img onclick="selecionarModelo(2,1)" src="/public/img/filtro_esportista.png">
+    <?php 
+        $Categoria = new CategoriaController();
+        $quadrado = $Categoria->buscarTodos(['tipo' => '2']);
+        $q = json_decode($quadrado);
+        foreach ($q->categorias as $categoria){
+    ?>
+        <div class="grid-item">
+            <div class="quadrado">
+                <a href="categoria?tipo=<?php echo $categoria->tipo?>&id=<?php echo $categoria->uniqid?>"> <img src="<?php echo $categoria->path?>"></a>
+            </div>
         </div>
-    </div>
-    <div class="grid-item">
-        <div class="quadrado">
-            <img onclick="selecionarModelo(2,2)" src="/public/img/filtro_fitness.png">
-        </div>
-    </div>
-    <div class="grid-item">
-        <div class="quadrado">
-            <img onclick="selecionarModelo(2,3)" src="/public/img/filtro_funcional.png">
-        </div>
-    </div>
-    <div class="grid-item">
-        <div class="quadrado">
-            <img onclick="selecionarModelo(2,4)" src="/public/img/filtro_futebol.png">
-        </div>
-    </div>
-    <div class="grid-item">
-        <div class="quadrado">
-            <img onclick="selecionarModelo(2,5)" src="/public/img/filtro_lazer.png">
-        </div>
-    </div>
+    <?php } ?>
 </div>
 
 <div class="subtitulo">
     <h2>Vertical</h2>
 </div>
 <div class="grid-container">
-    <div class="grid-item">
-        <div class="vertical">
-            <img onclick="selecionarModelo(3,1)" src="/public/img/vertical.png">
+    <?php 
+        $Categoria = new CategoriaController();
+        $quadrado = $Categoria->buscarTodos(['tipo' => '3']);
+        $q = json_decode($quadrado);
+        foreach ($q->categorias as $categoria){
+    ?>
+        <div class="grid-item">
+            <div class="vertical">
+                <a href="categoria?tipo=<?php echo $categoria->tipo?>&id=<?php echo $categoria->uniqid?>"> <img src="<?php echo $categoria->path?>"></a>
+            </div>
         </div>
+    <?php } ?>
 </div>

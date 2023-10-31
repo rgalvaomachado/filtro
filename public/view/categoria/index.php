@@ -6,21 +6,13 @@
 <?php
     $id = $_GET['id'];
     $tipo = $_GET['tipo'];
-    switch($tipo){
-        case 1:
-            include_once('destaque.php');
-        break;
-
-        case 2:
-            include_once('quadrado.php');
-        break;
-
-        case 3:
-            include_once('vertical.php');
-        break;
-
-        default :
-            echo "Tipo não encontrado";
-        break;
-    }
 ?>
+<div class="preview">
+    <div id="html-content-holder">
+        <input type="file" name="file" id="upload_in" onchange="previewFile()" style="display: none;"/>
+        <label id="upload" for="upload_in">
+            <img id="img-upload" src="../categoria/<?php echo $_GET['id']?>.png">
+        </label>
+    </div>
+    <button id="btn_convert" class="btn btn-lg" onclick="downloadFiltro()">Baixar Imagem</button>
+</div>

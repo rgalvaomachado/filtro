@@ -1,21 +1,20 @@
 $(document).ready(function() {
     $('#login').submit(function(e) {
         e.preventDefault();
-        // var email = $("#emailLogin").val();
+        var email = $("#emailLogin").val();
         // var senha = $("#senhaLogin").val();
         $.ajax({
             method: "POST",
             url: "controller/Controller.php",
             data: {
                 metodo: "login",
-                // email: email,
+                email: email,
                 // senha: senha,
             },
             complete: function(response) {
-                console.log('login');
                 var response = JSON.parse(response.responseText);
                 if(response.access){
-                    window.location.assign("home")
+                    window.location.assign("/")
                 }
                 // }else{
                 //     $('.error_login').show();

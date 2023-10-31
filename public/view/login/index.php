@@ -4,5 +4,7 @@
 </head>
 <form id="login">
     <h1>Login</h1>
+    <input id='emailLogin' placeholder="Email" required>
+    </br>
     <button type="submit">Entrar</button>
 </form>
