@@ -5,7 +5,7 @@
 <form id="logout">
     <button type="submit">Sair</button>
 </form>
-<h1>Criar Categoria</h1>
+<h1>Criar Filtro</h1>
 <form id="criar">
     <label>Nome</label>
     <br>

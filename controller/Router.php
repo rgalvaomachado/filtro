@@ -26,7 +26,7 @@
             if (!isset($_SESSION['modo']) || $_SESSION['modo'] == ''){
                 $url = "login";
             }
-            if ($_SESSION['modo'] == 'admin'){
+            if (isset($_SESSION['modo']) && $_SESSION['modo'] == 'admin'){
                 $url = "admin";
             }
 

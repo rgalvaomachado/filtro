@@ -1,22 +1,3 @@
-/*All*/
-div.preview {
-    width: 100%;
-    height: 90vh;
-    text-align: center;
-    padding: 0;
-}
-
-div.row {
-    height: 85vh;
-    padding: 0;
-    margin: 0;
-}
-
-div #html-content-holder {
-    width: 75%;
-    margin: 0 auto;
-}
-
 div.preview img {
     width: 100%;
     background-image: url(../../img/choice-img.png);
@@ -34,4 +15,23 @@ button.btn{
     font-weight: 600;
     width: 60%;
     margin-bottom: 20px;
+}
+
+.preview {
+    width: 500px;
+    height: 500px;
+    text-align: center;
+    padding: 0;
+}
+
+.quadrado{
+    width: 270px;
+    height: 270px;
+    background-color: rgb(31, 49, 49);
+}
+
+.vertical{
+    width: 270px;
+    height: 480px;
+    background-color: rgb(23, 26, 21);
 }

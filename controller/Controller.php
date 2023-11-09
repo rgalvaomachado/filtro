@@ -1,6 +1,7 @@
 <?php
     include_once('Login.php');
-    include_once('Categoria.php');
+    include_once('Filtro.php');
+    include_once('Imagem.php');
 
     $metodo = isset($_POST['metodo']) ? $_POST['metodo'] : "";
 
@@ -13,8 +14,12 @@
             $class = new Login();
             $response = $class->logout($_POST);
             break;
-        case 'criarCategoria':
-            $class = new CategoriaController();
+        case 'criarFiltro':
+            $class = new FiltroController();
+            $response = $class->criar($_POST);
+            break;
+        case 'criarImagem':
+            $class = new Imagem();
             $response = $class->criar($_POST);
             break;
         default:

@@ -1,5 +1,5 @@
 <?php
-    include_once('controller/Categoria.php');
+    include_once('controller/Filtro.php');
 ?>
 <head>
     <link href="/public/view/home/style.css" rel="stylesheet">
@@ -34,38 +34,42 @@
     </div>
 </div>
 
-<div class="subtitulo">
-    <h2>Quadrado</h2>
-</div>
-<div class="grid-container">
-    <?php 
-        $Categoria = new CategoriaController();
-        $quadrado = $Categoria->buscarTodos(['tipo' => '2']);
-        $q = json_decode($quadrado);
-        foreach ($q->categorias as $categoria){
-    ?>
-        <div class="grid-item">
-            <div class="quadrado">
-                <a href="categoria?tipo=<?php echo $categoria->tipo?>&id=<?php echo $categoria->uniqid?>"> <img src="<?php echo $categoria->path?>"></a>
-            </div>
+<?php
+    $Filtro = new FiltroController();
+    $quadrado = $Filtro->buscarTodos(['tipo' => '2']);
+    $q = json_decode($quadrado);
+    if(count($q->filtros) > 0){ ?>
+        <div class="subtitulo">
+            <h2>Quadrado</h2>
         </div>
-    <?php } ?>
-</div>
+        <div class="grid-container">
+            <?php foreach ($q->filtros as $filtro){ ?>
+                <div class="grid-item">
+                    <div class="quadrado">
+                        <a href="filtro?tipo=2&filtro=<?php echo $filtro->uniqid?>"> <img src="<?php echo './filtro/'.$filtro->uniqid.'.png'?>"></a>
+                    </div>
+                </div>
+            <?php } ?> 
+        </div>
+    <?php } 
+?>
 
-<div class="subtitulo">
-    <h2>Vertical</h2>
-</div>
-<div class="grid-container">
-    <?php 
-        $Categoria = new CategoriaController();
-        $quadrado = $Categoria->buscarTodos(['tipo' => '3']);
-        $q = json_decode($quadrado);
-        foreach ($q->categorias as $categoria){
-    ?>
-        <div class="grid-item">
-            <div class="vertical">
-                <a href="categoria?tipo=<?php echo $categoria->tipo?>&id=<?php echo $categoria->uniqid?>"> <img src="<?php echo $categoria->path?>"></a>
-            </div>
+<?php
+    $Filtro = new FiltroController();
+    $quadrado = $Filtro->buscarTodos(['tipo' => '3']);
+    $q = json_decode($quadrado);
+    if(count($q->filtros) > 0){ ?>
+        <div class="subtitulo">
+            <h2>Vertical</h2>
         </div>
-    <?php } ?>
-</div>
+        <div class="grid-container">
+            <?php foreach ($q->filtros as $filtro){ ?>
+                <div class="grid-item">
+                    <div class="vertical">
+                        <a href="filtro?tipo=3&filtro=<?php echo $filtro->uniqid?>"> <img src="<?php echo './filtro/'.$filtro->uniqid.'.png'?>"></a>
+                    </div>
+                </div>
+            <?php } ?> 
+        </div>
+    <?php } 
+?>

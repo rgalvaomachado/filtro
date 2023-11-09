@@ -1,9 +1,3 @@
-function selecionarModelo(tipo,id){
-    console.log(tipo);
-    console.log(id);
-    window.location.assign("categoria?tipo="+tipo+"&id="+id);
-}
-
 $(document).ready(function() {
     $('#logout').submit(function(e) {
         e.preventDefault();

@@ -39,7 +39,7 @@ $(document).ready(function() {
                 method: "POST",
                 url: "controller/Controller.php",
                 data: {
-                    metodo: "criarCategoria",
+                    metodo: "criarFiltro",
                     nome: nome,
                     path: path,
                     tipo: tipo,
