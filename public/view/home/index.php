@@ -18,21 +18,25 @@
     </form>
 </div>
 
-<div class="subtitulo">
-    <h2>Destaques</h2>
-</div>
-<div class="grid-container">
-    <div class="grid-item">
-        <div class="quadrado">
-            <img onclick="selecionarModelo(1,1)" src="/public/img/filtro_padrao.png">
+<?php
+    $Filtro = new FiltroController();
+    $quadrado = $Filtro->buscarTodos(['tipo' => '1']);
+    $q = json_decode($quadrado);
+    if(count($q->filtros) > 0){ ?>
+        <div class="subtitulo">
+            <h2>Destaques</h2>
         </div>
-    </div>
-    <div class="grid-item">
-        <div class="quadrado">
-            <img onclick="selecionarModelo(1,2)" src="/public/img/filtro_promocao.png">
+        <div class="grid-container">
+            <?php foreach ($q->filtros as $filtro){ ?>
+                <div class="grid-item">
+                    <div class="quadrado">
+                        <a href="filtro?tipo=2&filtro=<?php echo $filtro->uniqid?>"> <img src="<?php echo './filtro/'.$filtro->uniqid.'.png'?>"></a>
+                    </div>
+                </div>
+            <?php } ?> 
         </div>
-    </div>
-</div>
+    <?php } 
+?>
 
 <?php
     $Filtro = new FiltroController();
