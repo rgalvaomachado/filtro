@@ -30,7 +30,7 @@
             <?php foreach ($q->filtros as $filtro){ ?>
                 <div class="grid-item">
                     <div class="quadrado">
-                        <a href="filtro?tipo=2&filtro=<?php echo $filtro->uniqid?>"> <img src="<?php echo './filtro/'.$filtro->uniqid.'.png'?>"></a>
+                        <a href="filtro?tipo=1&filtro=<?php echo $filtro->uniqid?>"> <img src="<?php echo './filtro/'.$filtro->uniqid.'.png'?>"></a>
                     </div>
                 </div>
             <?php } ?> 

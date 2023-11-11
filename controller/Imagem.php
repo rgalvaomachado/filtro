@@ -68,7 +68,7 @@ class Imagem{
         ob_start();  
         imagepng($TempPngFile);
         $imagedata = ob_get_clean();
-        ob_end_flush();
+        
         $base64_img     = str_replace('data:image/png;base64,', '', base64_encode($imagedata));
         $base64_img     = str_replace(' ', '+', $base64_img);
         $data           = base64_decode($base64_img);
@@ -77,14 +77,14 @@ class Imagem{
         $path_tmp = 'tmp/'.$uniqid_tmp.'.png';
         file_put_contents($path_tmp, $data);
 
-        return json_encode([
-            "access" => true,
-            "uniqid_tmp" => $uniqid_tmp
-        ]);
+        return $uniqid_tmp;
     }
 
     public function criar($post){
         switch($post['tipo']){
+            case '1':
+                return $this->criarFiltroTexto($post);
+                break;
             case '2':
                 return $this->criarQuadrado($post);
                 break;
@@ -102,7 +102,13 @@ class Imagem{
         $image_height = 1920;
         $image = $post['imagem'];
         $uniqidFiltro = $post['uniqidFiltro'];
-        return $this->criarImagem($image, $uniqidFiltro, $image_width, $image_height);
+        
+        $uniqid_tmp = $this->criarImagem($image, $uniqidFiltro, $image_width, $image_height);
+
+        return json_encode([
+            "access" => true,
+            "uniqid_tmp" => $uniqid_tmp
+        ]);
     }
 
     public function criarQuadrado($post){
@@ -110,7 +116,55 @@ class Imagem{
         $image_height = 1080;
         $image = $post['imagem'];
         $uniqidFiltro = $post['uniqidFiltro'];
-        return $this->criarImagem($image, $uniqidFiltro, $image_width, $image_height);
+
+        $uniqid_tmp = $this->criarImagem($image, $uniqidFiltro, $image_width, $image_height);
+
+        return json_encode([
+            "access" => true,
+            "uniqid_tmp" => $uniqid_tmp
+        ]);
+    }
+
+    public function criarFiltroTexto($post){
+        $image_width = 1080;
+        $image_height = 1080;
+        $image = $post['imagem'];
+        $uniqidFiltro = $post['uniqidFiltro'];
+
+        $output_file = 'public/filtro/'.$uniqidFiltro.'.png';
+        $im = imagecreatefrompng($output_file);
+    
+        $black = imagecolorallocate($im, 0, 0, 0);
+        $white = imagecolorallocate($im, 255, 255, 255);
+        imagecolortransparent($im, $white);
+    
+        $text = 'Testing...';
+        $text2 = 'Testing2...';
+        $font = 'public/fonts/arial-rounded-mt-bold.ttf';
+    
+        imagettftext($im, 15, 0, 400, 150, $black, $font, $text);
+        imagettftext($im, 15, 0, 400, 350, $black, $font, $text2);
+    
+        //salva filtro temporario
+        ob_start();  
+        imagepng($im);
+        $imagedata = ob_get_clean();
+        
+        $base64_img     = str_replace('data:image/png;base64,', '', base64_encode($imagedata));
+        $base64_img     = str_replace(' ', '+', $base64_img);
+        $data           = base64_decode($base64_img);
+        $uniqid_filtro_tmp = uniqid();
+        $path_filtro_tmp = 'public/filtro/'.$uniqid_filtro_tmp.'.png';
+        file_put_contents($path_filtro_tmp, $data);
+
+        $uniqid_tmp = $this->criarImagem($image, $uniqid_filtro_tmp, $image_width, $image_height);
+
+        unlink($path_filtro_tmp);
+
+        return json_encode([
+            "access" => true,
+            "uniqid_tmp" => $uniqid_tmp
+        ]);
     }
 }
 ?>
