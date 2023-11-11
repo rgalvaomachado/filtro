@@ -1,25 +1,27 @@
-$(document).ready(function() {
-    $('#login').submit(function(e) {
-        e.preventDefault();
-        var email = $("#emailLogin").val();
-        // var senha = $("#senhaLogin").val();
+$('#criar').submit(function(e) {
+    e.preventDefault();
+    var nome = $("#nome").val();
+    var path = $("#path").val();
+    var tipo = $("#tipo").val();
+    var filesSelected = document.getElementById("filtro").files;
+    var fileToLoad = filesSelected[0];
+    var fileReader = new FileReader();
+    fileReader.onload = function(fileLoadedEvent) {
+        var filtro = fileLoadedEvent.target.result;
         $.ajax({
             method: "POST",
             url: "controller/Controller.php",
             data: {
-                metodo: "login",
-                email: email,
-                // senha: senha,
+                metodo: "criarFiltro",
+                nome: nome,
+                path: path,
+                tipo: tipo,
+                filtro: filtro,
             },
             complete: function(response) {
                 var response = JSON.parse(response.responseText);
                 if(response.access){
-                    console.log(response.modo)
-                    if(response.modo == 'admin'){
-                        window.location.assign("/admin/home")
-                    }else{
-                        window.location.assign("/")
-                    }
+                    window.location.assign("/admin")
                 }
                 // }else{
                 //     $('.error_login').show();
@@ -32,5 +34,6 @@ $(document).ready(function() {
                 // }
             }
         });
-    })
-});
+    }
+    fileReader.readAsDataURL(fileToLoad);
+})

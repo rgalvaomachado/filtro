@@ -7,6 +7,7 @@
             $_SESSION['modo'] = $post['email'];
             return json_encode([
                 "access" => true,
+                "modo" => $post['email'],
                 "message" => "Login efetuado com sucesso",
             ]);
         }

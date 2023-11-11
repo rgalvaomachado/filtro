@@ -12,7 +12,7 @@
             $url = explode('?',$url);
             unset($url[1]);
             $url = implode('',$url);
-    
+
             if(is_file($url)){
                 return $url;
             }
@@ -26,14 +26,21 @@
             if (!isset($_SESSION['modo']) || $_SESSION['modo'] == ''){
                 $url = "login";
             }
-            if (isset($_SESSION['modo']) && $_SESSION['modo'] == 'admin'){
-                $url = "admin";
+
+            if ($url == "" && isset($_SESSION['modo']) && $_SESSION['modo'] == 'admin'){
+                header('Location: admin/home');
             }
 
             if ($url == ""){
                 $url = "home";
             }
-    
+
+            if ($url == "admin" && isset($_SESSION['modo']) && $_SESSION['modo'] == 'admin'){
+                $url = "admin/home";
+            } elseif ($url == "" && isset($_SESSION['modo']) && $_SESSION['modo'] != 'admin' ){
+                $url = "home";
+            }
+
             include_once('public/head.php');
     
             foreach($routes as $route){
