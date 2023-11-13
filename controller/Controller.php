@@ -2,6 +2,7 @@
     include_once('Login.php');
     include_once('Filtro.php');
     include_once('Imagem.php');
+    include_once('Cliente.php');
 
     $metodo = isset($_POST['metodo']) ? $_POST['metodo'] : "";
 
@@ -21,6 +22,19 @@
         case 'criarImagem':
             $class = new Imagem();
             $response = $class->criar($_POST);
+            break;
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////
+        case 'criarCliente':
+            $class = new ClienteController();
+            $response = $class->criar($_POST);
+            break;
+        case 'editarCliente':
+            $class = new ClienteController();
+            $response = $class->editar($_POST);
+            break;
+        case 'deletarCliente':
+            $class = new ClienteController();
+            $response = $class->deletar($_POST);
             break;
         default:
             $response = json_encode([

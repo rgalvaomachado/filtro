@@ -10,7 +10,7 @@ $('#criar').submit(function(e) {
         var filtro = fileLoadedEvent.target.result;
         $.ajax({
             method: "POST",
-            url: "controller/Controller.php",
+            url: "/controller/Controller.php",
             data: {
                 metodo: "criarFiltro",
                 nome: nome,

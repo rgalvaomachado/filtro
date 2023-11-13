@@ -1,5 +1,6 @@
 <head>
     <script src="https://kit.fontawesome.com/7ca1b2bc88.js" crossorigin="anonymous"></script>
+    <link href="/public/view/admin/style.css" rel="stylesheet">
 </head>
 <div class="grid-item-menu">
     <a href="home">
@@ -9,15 +10,22 @@
         <ul id="listMenu">
             <li>
                 <div class="itemMenu">
-                    <a href="filtro">
+                    <a href="/admin/filtro">
                         <em class="fa fa-graduation-cap" aria-hidden="true"></em>&nbsp;Filtro
                     </a>
                 </div>
             </li>
             <li>
                 <div class="itemMenu">
-                    <a href="usuario">
+                    <a href="/admin/usuario">
                         <em class="fa fa-user" aria-hidden="true"></em>&nbsp;Usuario
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="itemMenu">
+                    <a href="/admin/cliente">
+                        <em class="fa fa-user" aria-hidden="true"></em>&nbsp;Cliente
                     </a>
                 </div>
             </li>

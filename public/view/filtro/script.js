@@ -11,7 +11,7 @@ $(document).ready(function() {
             var imagem = fileLoadedEvent.target.result
             $.ajax({
                 method: "POST",
-                url: "controller/Controller.php",
+                url: "/controller/Controller.php",
                 data: {
                     metodo: "criarImagem",
                     uniqidFiltro: uniqidFiltro,

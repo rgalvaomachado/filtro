@@ -1,6 +1,5 @@
 <head>
-    <link href="/public/view/admin/style.css" rel="stylesheet">
-    <script src="/public/view/admin/script.js"></script>
+    <link href="public/view/admin/style.css" rel="stylesheet">
 </head>
 <div class="grid-content grid-container">
     <?php include_once('public/view/admin/menu.php')?>

@@ -1,5 +1,4 @@
 <head>
-    <script src="/public/view/admin/script.js"></script>
     <script src="/public/view/admin/top.js"></script>
     <script src="/public/view/admin/menu.js"></script>
 </head>

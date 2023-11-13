@@ -3,7 +3,7 @@ $(document).ready(function() {
         e.preventDefault();
         $.ajax({
             method: "POST",
-            url: "controller/Controller.php",
+            url: "/controller/Controller.php",
             data: {
                 metodo: "logout",
             },
