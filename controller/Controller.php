@@ -3,6 +3,7 @@
     include_once('Filtro.php');
     include_once('Imagem.php');
     include_once('Cliente.php');
+    include_once('Usuario.php');
 
     $metodo = isset($_POST['metodo']) ? $_POST['metodo'] : "";
 
@@ -34,6 +35,19 @@
             break;
         case 'deletarCliente':
             $class = new ClienteController();
+            $response = $class->deletar($_POST);
+            break;
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////
+        case 'criarUsuario':
+            $class = new UsuarioController();
+            $response = $class->criar($_POST);
+            break;
+        case 'editarUsuario':
+            $class = new UsuarioController();
+            $response = $class->editar($_POST);
+            break;
+        case 'deletarUsuario':
+            $class = new UsuarioController();
             $response = $class->deletar($_POST);
             break;
         default:

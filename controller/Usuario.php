@@ -1,50 +1,42 @@
 <?php
-    include_once('model/Filtro.php');
+    include_once('model/Usuario.php');
 
-    class FiltroController{
+    class UsuarioController{
         function buscarTodos($post){
-            $Filtro = new Filtro();
-            $Filtro->tipo = $post['tipo'];
-            $filtros = $Filtro->buscarTodos();
+            $UsuarioModel = new UsuarioModel();
+            $usuarios = $UsuarioModel->buscarTodos();
             return json_encode([
                 "access" => true,
-                "filtros" => $filtros
+                "usuarios" => $usuarios
             ]);
         }
 
         function buscar($post){
-            $Filtro = new Filtro();
-            $Filtro->tipo = $post['tipo'];
-            $filtros = $Filtro->buscar();
-            if(!empty($filtros)){
+            $UsuarioModel = new UsuarioModel();
+            $UsuarioModel->id = $post['id'];
+            $usuario = $UsuarioModel->buscar();
+            if(!empty($usuario)){
                 return json_encode([
                     "access" => true,
-                    "filtros" => $filtros,
+                    "usuario" => $usuario,
                 ]);
             } else {
                 return json_encode([
                     "access" => false,
-                    "message" => "Filtro não encontrado"
+                    "message" => "Usuario não encontrado"
                 ]);
             }
         }
 
         function criar($post){
+            $UsuarioModel = new UsuarioModel();
+            $UsuarioModel->nome = $post['nome'];
+            $UsuarioModel->email = $post['email'];
+            $UsuarioModel->senha = $post['senha'];
+            $UsuarioModel->tipo = $post['tipo'];
+            $UsuarioModel->cliente = $post['cliente'] != '' ? $post['cliente'] : 0;
 
-            $uniqid = uniqid();
-            $path = 'public/filtro/'.$uniqid.'.png';
-
-            $img = $post['filtro'];
-            $img = str_replace('data:image/png;base64,', '', $img);
-            $img = str_replace(' ', '+', $img);
-            $data = base64_decode($img);
-            file_put_contents($path, $data);
-
-            $Filtro = new Filtro();
-            $Filtro->nome = $post['nome'];
-            $Filtro->uniqid = $uniqid;
-            $Filtro->tipo = $post['tipo'];
-            $id = $Filtro->criar();
+            $id = $UsuarioModel->criar();
             if ($id > 0){
                 return json_encode([
                     "access" => true,
@@ -60,10 +52,14 @@
         }
 
         function editar($post){
-            $Filtro = new Filtro();
-            $Filtro->id = $post['id'];
-            $Filtro->nome = $post['nome'];
-            $id = $Filtro->editar();
+            $UsuarioModel = new UsuarioModel();
+            $UsuarioModel->id = $post['id'];
+            $UsuarioModel->nome = $post['nome'];
+            $UsuarioModel->email = $post['email'];
+            $UsuarioModel->senha = $post['senha'];
+            $UsuarioModel->tipo = $post['tipo'];
+            $UsuarioModel->cliente = $post['cliente'] != '' ? $post['cliente'] : 0;
+            $id = $UsuarioModel->editar();
             if ($id > 0) {
                 return json_encode([
                     "access" => true,
@@ -78,9 +74,9 @@
         }
 
         function deletar($post){
-            $Filtro = new Filtro();
-            $Filtro->id = $post['id'];
-            $deletado = $Filtro->deletar();
+            $UsuarioModel = new UsuarioModel();
+            $UsuarioModel->id = $post['id'];
+            $deletado = $UsuarioModel->deletar();
             if ($deletado){
                 return json_encode([
                     "access" => true,

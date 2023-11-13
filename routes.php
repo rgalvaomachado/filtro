@@ -16,6 +16,9 @@
         ['admin/filtro/criar','public/view/admin/filtro/criar.php'],
 
         ['admin/usuario','public/view/admin/usuario/index.php'],
+        ['admin/usuario/criar','public/view/admin/usuario/criar.php'],
+        ['admin/usuario/editar','public/view/admin/usuario/editar.php'],
+        ['admin/usuario/deletar','public/view/admin/usuario/deletar.php'],
 
         ['admin/cliente','public/view/admin/cliente/index.php'],
         ['admin/cliente/criar','public/view/admin/cliente/criar.php'],
