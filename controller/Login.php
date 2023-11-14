@@ -13,6 +13,7 @@
                 if($email == $usuario->email && $senha == $usuario->senha){
                     $idValidado = $usuario->id;
                     $usuarioValidado = $usuario->nome;
+                    $clienteValidado = $usuario->cliente;
                     $modoValidado = $usuario->tipo == 1 ? 'admin' : "usuario";
                     $validado = true;
                 }
@@ -24,9 +25,10 @@
                 }
 
                 $_SESSION['id_usuario'] =  $idValidado;
-                $_SESSION['usuario'] =  $usuarioValidado;
-                $_SESSION['modo'] = $modoValidado;
-                $_SESSION['CREATED'] = time();
+                $_SESSION['usuario']    =  $usuarioValidado;
+                $_SESSION['cliente']    = $usuario->cliente;
+                $_SESSION['modo']       = $modoValidado;
+                $_SESSION['CREATED']    = time();
                 return json_encode([
                     "access" => true,
                     "modo" => $modoValidado,

@@ -11,6 +11,17 @@
             ]);
         }
 
+        function buscarTipoCliente($post){
+            $FiltroModel = new FiltroModel();
+            $FiltroModel->tipo = $post['tipo'];
+            $FiltroModel->cliente = $post['cliente'];
+            $filtros = $FiltroModel->buscarTipoCliente();
+            return json_encode([
+                "access" => true,
+                "filtros" => $filtros
+            ]);
+        }
+
         function buscar($post){
             $FiltroModel = new FiltroModel();
             $FiltroModel->id = $post['id'];

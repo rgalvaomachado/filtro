@@ -25,6 +25,15 @@
             return $getTodos->fetchAll(PDO::FETCH_ASSOC);
         }
 
+        function buscarTipoCliente(){
+            $getTodos =  $this->bd->prepare('SELECT * FROM filtro WHERE tipo = :tipo AND cliente = :cliente');
+            $getTodos->execute([
+                ':tipo' => $this->tipo,
+                ':cliente' => $this->cliente,
+            ]);
+            return $getTodos->fetchAll(PDO::FETCH_ASSOC);
+        }
+
         function buscar(){
             $get =  $this->bd->prepare('SELECT * FROM filtro WHERE id = :id ORDER BY nome ASC');
             $get->execute([
