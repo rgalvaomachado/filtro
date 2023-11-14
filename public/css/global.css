@@ -8,22 +8,29 @@
     src: url(/fonte/arial-rounded-mt-bold.ttf);
  }
 
- /*All*/
-
- body {
+body {
     padding: 0;
     margin: 0;
- }
+}
 
- div.cabecalho{
+div.cabecalho{
     padding: 0;
     text-align: center;
 }
 
- div.footer {
+footer {
     background-color: var(--cor-principal-dark);
     width: 100%;
     text-align: center;
+    color: #ccc;
+    font-size: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    
+}
+footer>a{
+    color: #3087d8;
+    text-decoration: none;
 }
 
 .input{

@@ -40,9 +40,9 @@
             } elseif ($url == "" && isset($_SESSION['modo']) && $_SESSION['modo'] == 'usuario' ){
                 $url = "home";
             }
-
-            include_once('public/head.php');
     
+            include_once('public/head.php');
+
             foreach($routes as $route){
                 $RoutePath = $route[0];
                 $RouteView = $route[1];
@@ -60,6 +60,9 @@
             } else {
                 include_once ('404.html');
             }
+
+            include_once('public/footer.php');
+           
         }
     }
 ?>
