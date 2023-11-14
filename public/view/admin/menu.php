@@ -11,7 +11,7 @@
             <li>
                 <div class="itemMenu">
                     <a href="/admin/filtro">
-                        <em class="fa fa-graduation-cap" aria-hidden="true"></em>&nbsp;Filtro
+                        <em class="fa fa-picture-o" aria-hidden="true"></em>&nbsp;Filtro
                     </a>
                 </div>
             </li>
@@ -25,7 +25,7 @@
             <li>
                 <div class="itemMenu">
                     <a href="/admin/cliente">
-                        <em class="fa fa-user" aria-hidden="true"></em>&nbsp;Cliente
+                        <em class="fa fa-building" aria-hidden="true"></em>&nbsp;Cliente
                     </a>
                 </div>
             </li>
