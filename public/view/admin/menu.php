@@ -3,7 +3,7 @@
 </head>
 <div class="grid-item-menu">
     <a href="home">
-        <img src="/public/img/claus.png" id="logo-gestoredu">
+        <img src="/public/img/hubis-colorido.png" id="logo-gestoredu">
     </a>
     <div class="menu" id="menu">
         <ul id="listMenu">
