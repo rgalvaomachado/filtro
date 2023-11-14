@@ -35,12 +35,14 @@
     width: 270px;
     height: 270px;
     background-color: rgb(31, 49, 49);
+    border-radius: 7px;
 }
 
 .vertical{
     width: 270px;
     height: 480px;
     background-color: rgb(23, 26, 21);
+    border-radius: 7px;
 }
 
 .vertical img, .quadrado img {
