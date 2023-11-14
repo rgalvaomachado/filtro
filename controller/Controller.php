@@ -9,17 +9,14 @@
 
     switch($metodo){
         case 'login':
-            $class = new Login();
+            $class = new LoginController();
             $response = $class->login($_POST);
             break;
         case 'logout':
-            $class = new Login();
+            $class = new LoginController();
             $response = $class->logout($_POST);
             break;
-        case 'criarFiltro':
-            $class = new FiltroController();
-            $response = $class->criar($_POST);
-            break;
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////
         case 'criarImagem':
             $class = new Imagem();
             $response = $class->criar($_POST);

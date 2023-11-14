@@ -37,7 +37,7 @@
 
             if ($url == "admin" && isset($_SESSION['modo']) && $_SESSION['modo'] == 'admin'){
                 $url = "admin/home";
-            } elseif ($url == "" && isset($_SESSION['modo']) && $_SESSION['modo'] != 'admin' ){
+            } elseif ($url == "" && isset($_SESSION['modo']) && $_SESSION['modo'] == 'usuario' ){
                 $url = "home";
             }
 

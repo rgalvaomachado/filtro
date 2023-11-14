@@ -1,5 +1,4 @@
 <head>
-    <script src="https://kit.fontawesome.com/7ca1b2bc88.js" crossorigin="anonymous"></script>
     <link href="/public/view/admin/style.css" rel="stylesheet">
 </head>
 <div class="grid-item-menu">

@@ -5,5 +5,6 @@
     <link rel="icon" href="/public/img/logo-page.png">
     <script src="/public/js/jquery-3.6.0.js"></script>
     <script src="/public/js/html2canvas.js"></script>
+    <script src="https://kit.fontawesome.com/7ca1b2bc88.js" crossorigin="anonymous"></script>
     <link href="/public/css/global.css" rel="stylesheet">
 </head>

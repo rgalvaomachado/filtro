@@ -26,6 +26,40 @@
     text-align: center;
 }
 
+.input{
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 70%;
+    height: 50px;
+    border: solid 1px #ccc ;
+    font-size: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  input:focus {
+    outline-color: #004fde;
+  }
+  
+  .button{
+    background-color: #004fde;
+    color:#ffffff;
+    border: solid 1px #ffffff;
+    border-radius: 5px;
+    font-size: 20px;
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 200px;
+  }
+  
+  .button:hover{
+    background-color: #ffffff;
+    color: #004fde;
+    border: solid 1px #004fde;
+  }
+
 /*Desktop*/
 @media (min-width: 1024px) {
     div.cabecalho img {
@@ -38,6 +72,10 @@
         width: 100px;
         padding: 20px 0px;
     }
+
+    .title{
+        font-size: 30px;
+      }
 }
 
 /*table*/
@@ -67,4 +105,8 @@
         width: 70px;
         padding: 20px 0px;
     }
+
+    .title{
+        font-size: 30px;
+      }
 }
