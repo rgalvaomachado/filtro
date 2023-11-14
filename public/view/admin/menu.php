@@ -2,7 +2,7 @@
     <link href="/public/view/admin/style.css" rel="stylesheet">
 </head>
 <div class="grid-item-menu">
-    <a href="home">
+    <a href="/admin/home">
         <img src="/public/img/hubis.png" id="logo-gestoredu">
     </a>
     <div class="menu" id="menu">
