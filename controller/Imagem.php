@@ -140,7 +140,7 @@ class Imagem{
     
         $text = 'Testing...';
         $text2 = 'Testing2...';
-        // $font = 'public/fonts/arial-rounded-mt-bold.ttf';
+        $font = 'public/fonts/arial-rounded-mt-bold.ttf';
     
         imagettftext($im, 15, 0, 400, 150, $black, $font, $text);
         imagettftext($im, 15, 0, 400, 350, $black, $font, $text2);
