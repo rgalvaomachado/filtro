@@ -1,0 +1,14 @@
+.grid-container-graficos {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+  .grid-item-graficos {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  #graficos{
+    width: 50%;
+    margin: auto;
+  }
+  
