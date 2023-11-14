@@ -60,9 +60,6 @@
             } else {
                 include_once ('404.html');
             }
-
-            include_once('public/footer.php');
-           
         }
     }
 ?>
