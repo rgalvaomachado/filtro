@@ -1,6 +1,9 @@
+<?php
+	include_once('controller/Cliente.php')
+?>
 <head>
-    <link href="/public/view/admin/style.css" rel="stylesheet">
-    <script src="/public/view/admin/script.js"></script>
+    <link href="public/view/admin/filtro/style.css" rel="stylesheet">
+    <script src="/public/view/admin/filtro/script.js"></script>
 </head>
 <div class="grid-content grid-container">
     <?php include_once('public/view/admin/menu.php')?>
@@ -8,7 +11,7 @@
         <?php include_once('public/view/admin/top.php')?>
         <h1>Criar Filtro</h1>
         <form id="criar">
-            <label>Nome</label>
+        <label>Nome</label>
             <br>
             <input class="input" id="nome">
             <br>
@@ -28,10 +31,14 @@
             <br>
             <label>Cliente</label>
             <br>
-            <select class="input" id="tipo">
-                <option value="1">Destaque</option>
-                <option value="2">Quadrado</option>
-                <option value="3">Vertical</option>
+            <?php
+                $ClienteController = new ClienteController();
+                $clientes = json_decode($ClienteController->buscarTodos([]))->clientes;
+            ?>
+            <select class="input" id="cliente">
+                <?php foreach ($clientes as $cliente){ ?>
+                    <option value="<?php echo $cliente->id ?>"><?php echo $cliente->nome ?></option>
+                <?php } ?>
             </select>
             <br>
             <button class="button" type="submit">Criar</button>

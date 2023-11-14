@@ -3,9 +3,8 @@
 
     class FiltroController{
         function buscarTodos($post){
-            $Filtro = new Filtro();
-            $Filtro->tipo = $post['tipo'];
-            $filtros = $Filtro->buscarTodos();
+            $FiltroModel = new FiltroModel();
+            $filtros = $FiltroModel->buscarTodos();
             return json_encode([
                 "access" => true,
                 "filtros" => $filtros
@@ -13,13 +12,13 @@
         }
 
         function buscar($post){
-            $Filtro = new Filtro();
-            $Filtro->tipo = $post['tipo'];
-            $filtros = $Filtro->buscar();
-            if(!empty($filtros)){
+            $FiltroModel = new FiltroModel();
+            $FiltroModel->id = $post['id'];
+            $filtro = $FiltroModel->buscar();
+            if(!empty($filtro)){
                 return json_encode([
                     "access" => true,
-                    "filtros" => $filtros,
+                    "filtro" => $filtro,
                 ]);
             } else {
                 return json_encode([
@@ -30,7 +29,6 @@
         }
 
         function criar($post){
-
             $uniqid = uniqid();
             $path = 'public/filtro/'.$uniqid.'.png';
 
@@ -40,11 +38,12 @@
             $data = base64_decode($img);
             file_put_contents($path, $data);
 
-            $Filtro = new Filtro();
-            $Filtro->nome = $post['nome'];
-            $Filtro->uniqid = $uniqid;
-            $Filtro->tipo = $post['tipo'];
-            $id = $Filtro->criar();
+            $FiltroModel = new FiltroModel();
+            $FiltroModel->nome = $post['nome'];
+            $FiltroModel->uniqid = $uniqid;
+            $FiltroModel->tipo = $post['tipo'];
+            $FiltroModel->cliente = $post['cliente'];
+            $id = $FiltroModel->criar();
             if ($id > 0){
                 return json_encode([
                     "access" => true,
@@ -59,29 +58,30 @@
             
         }
 
-        function editar($post){
-            $Filtro = new Filtro();
-            $Filtro->id = $post['id'];
-            $Filtro->nome = $post['nome'];
-            $id = $Filtro->editar();
-            if ($id > 0) {
-                return json_encode([
-                    "access" => true,
-                    "message" => "Editado com sucesso"
-                ]);
-            } else {
-                return json_encode([
-                    "access" => false,
-                    "message" => "Erro na edição"
-                ]);
-            }
-        }
+        // function editar($post){
+        //     $FiltroModel = new FiltroModel();
+        //     $FiltroModel->id = $post['id'];
+        //     $FiltroModel->nome = $post['nome'];
+        //     $id = $FiltroModel->editar();
+        //     if ($id > 0) {
+        //         return json_encode([
+        //             "access" => true,
+        //             "message" => "Editado com sucesso"
+        //         ]);
+        //     } else {
+        //         return json_encode([
+        //             "access" => false,
+        //             "message" => "Erro na edição"
+        //         ]);
+        //     }
+        // }
 
         function deletar($post){
-            $Filtro = new Filtro();
-            $Filtro->id = $post['id'];
-            $deletado = $Filtro->deletar();
+            $FiltroModel = new FiltroModel();
+            $FiltroModel->id = $post['id'];
+            $deletado = $FiltroModel->deletar();
             if ($deletado){
+                unlink('public/filtro/'.$post['uniqid'].'.png');
                 return json_encode([
                     "access" => true,
                     "message" => "Deletado com sucesso"

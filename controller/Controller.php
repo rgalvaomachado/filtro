@@ -25,6 +25,16 @@
             $response = $class->criar($_POST);
             break;
         ////////////////////////////////////////////////////////////////////////////////////////////////////////
+        case 'criarFiltro':
+            $class = new FiltroController();
+            $response = $class->criar($_POST);
+            break;
+        case 'deletarFiltro':
+            $class = new FiltroController();
+            $response = $class->deletar($_POST);
+            break;
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////
+
         case 'criarCliente':
             $class = new ClienteController();
             $response = $class->criar($_POST);

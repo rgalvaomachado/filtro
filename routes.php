@@ -14,6 +14,8 @@
 
         ['admin/filtro','public/view/admin/filtro/index.php'],
         ['admin/filtro/criar','public/view/admin/filtro/criar.php'],
+        // ['admin/filtro/editar','public/view/admin/filtro/editar.php'],
+        ['admin/filtro/deletar','public/view/admin/filtro/deletar.php'],
 
         ['admin/usuario','public/view/admin/usuario/index.php'],
         ['admin/usuario/criar','public/view/admin/usuario/criar.php'],
