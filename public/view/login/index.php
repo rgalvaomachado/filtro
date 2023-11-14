@@ -6,7 +6,7 @@
 <div class="grid">
     <div class="grid-item">
         <div id="gestor_edu">
-            <img id="logo-gedu" src='/public/img/hubis-colorido.png'>
+            <img id="logo" src='/public/img/hubis-colorido.png'>
             <div id="nao_tem_conta1">
                 <label class="cinza open_sans" id="nao_conta">Ainda não tem uma conta?</label>
                 </br></br>
