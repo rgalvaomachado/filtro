@@ -25,7 +25,10 @@
                         Nome
                     </th>
                     <th>
-                        cliente
+                        Cliente
+                    </th>
+                    <th>
+                        Tipo
                     </th>
                 </tr>
                 <?php foreach ($filtros as $filtro){ ?>
@@ -40,6 +43,24 @@
                                 echo $cliente->nome;
                             ?>
                         </td> 
+                        <td>
+                            <?php
+                                switch($filtro->tipo){
+                                    case '1':
+                                        echo "Destaque";
+                                        break;
+                                    case '2':
+                                        echo "Quadrado";
+                                        break;
+                                    case '3':
+                                        echo "Vertical";
+                                        break;
+                                    default:
+                                        echo 'Tipo não encontrado';
+                                        break;
+                                }
+                            ?>
+                        </td>
                         <!-- <td>
                             <a href="/admin/filtro/editar?id=<?php echo $filtro->id ?>"><i class="fa fa-pencil" aria-hidden="true"></i></a>
                         </td> -->
