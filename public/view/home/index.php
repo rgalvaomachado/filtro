@@ -73,4 +73,4 @@
     ?>
 </div>
 
-<?php include_once('public/footer.php'); ?>
+<?php //include_once('public/footer.php'); ?>
