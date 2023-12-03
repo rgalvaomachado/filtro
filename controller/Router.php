@@ -55,10 +55,21 @@
         function run($routes){
             $url = $this->getURL();
             $path = $this->path($url, $routes);
-            if($path){
-                include_once $path;
-            } else {
-                include_once ('404.html');
+            if(isset($path)){
+                $extension = substr($path, -3);
+                if ($extension == 'png'){
+                    $c = file_get_contents($path,true);
+                    $size = filesize($path);
+                    header ('Content-Type: image/png');
+                    header ("Content-length: $size");
+                    echo $c;
+                }else{
+                    if($path){
+                        include_once $path;
+                    } else {
+                        include_once ('404.html');
+                    }
+                }
             }
         }
     }
