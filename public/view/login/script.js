@@ -1,14 +1,14 @@
 $(document).ready(function() {
-    $('#login').submit(function(e) {
+    $('#login_usuario').submit(function(e) {
         e.preventDefault();
-        var email = $("#email").val();
+        var login = $("#login").val();
         var senha = $("#senha").val();
         $.ajax({
             method: "POST",
             url: "/controller/Controller.php",
             data: {
                 metodo: "login",
-                email: email,
+                login: login,
                 senha: senha,
             },
             complete: function(response) {

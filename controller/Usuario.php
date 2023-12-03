@@ -31,7 +31,7 @@
         function criar($post){
             $UsuarioModel = new UsuarioModel();
             $UsuarioModel->nome = $post['nome'];
-            $UsuarioModel->email = $post['email'];
+            $UsuarioModel->login = $post['login'];
             $UsuarioModel->senha = $post['senha'];
             $UsuarioModel->tipo = $post['tipo'];
             $UsuarioModel->cliente = $post['cliente'] != '' ? $post['cliente'] : 0;
@@ -55,7 +55,7 @@
             $UsuarioModel = new UsuarioModel();
             $UsuarioModel->id = $post['id'];
             $UsuarioModel->nome = $post['nome'];
-            $UsuarioModel->email = $post['email'];
+            $UsuarioModel->login = $post['login'];
             $UsuarioModel->senha = $post['senha'];
             $UsuarioModel->tipo = $post['tipo'];
             $UsuarioModel->cliente = $post['cliente'] != '' ? $post['cliente'] : 0;

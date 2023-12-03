@@ -31,7 +31,7 @@
 			</br>
 			<label>Email</label>
 			</br>
-			<input class='input' name="email" id="email" value="<?php echo $usuario->email?>">
+			<input class='input' name="login" id="login" value="<?php echo $usuario->login?>">
 			</br>
 			<label>Senha</label>
 			</br>

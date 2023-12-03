@@ -2,7 +2,7 @@
     include_once('Usuario.php');
     class LoginController{
         public function login($post){
-            $email = $post['email'];
+            $login = $post['login'];
             $senha = $post['senha'];
             $validado = false;
 
@@ -10,7 +10,7 @@
             $UsuarioController = json_decode($UsuarioController->buscarTodos([]));
             $usuarios = $UsuarioController->usuarios;
             foreach($usuarios as $usuario){
-                if($email == $usuario->email && $senha == $usuario->senha){
+                if($login == $usuario->login && $senha == $usuario->senha){
                     $idValidado = $usuario->id;
                     $usuarioValidado = $usuario->nome;
                     $clienteValidado = $usuario->cliente;
@@ -24,9 +24,9 @@
                     session_start();
                 }
 
-                $_SESSION['id_usuario'] =  $idValidado;
-                $_SESSION['usuario']    =  $usuarioValidado;
-                $_SESSION['cliente']    = $usuario->cliente;
+                $_SESSION['id_usuario'] = $idValidado;
+                $_SESSION['usuario']    = $usuarioValidado;
+                $_SESSION['cliente']    = $clienteValidado;
                 $_SESSION['modo']       = $modoValidado;
                 $_SESSION['CREATED']    = time();
                 return json_encode([

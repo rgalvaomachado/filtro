@@ -16,7 +16,7 @@
     </div>
     <div class="grid-item">
         <div id="faca_login">
-            <form id="login">
+            <form id="login_usuario">
                 </br>
                 <label class="title"><b>Faça seu Login</b></label>
                 </br></br></br></br>
@@ -24,7 +24,7 @@
                     <em class="fa fa-ban" aria-hidden="true"></em>
                     <label class="message_alert" id="messageAlert"></label>
                 </div>
-                <input class='input' placeholder="Seu e-mail" id="email" name="email" type="email" required>
+                <input class='input' placeholder="Login" id="login" name="login" type="login" required>
                 </br>
                 <input class='input' placeholder="Senha" id="senha" name="senha" type="password" required>
                 </br></br></br>

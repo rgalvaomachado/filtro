@@ -2,7 +2,7 @@ $(document).ready(function() {
     $('#criar').submit(function(e) {
         e.preventDefault();
         var nome = $("#nome").val();
-        var email = $("#email").val();
+        var login = $("#login").val();
         var senha = $("#senha").val();
         var tipo = $("#tipo").val();
         var cliente = $("#cliente").val();
@@ -12,7 +12,7 @@ $(document).ready(function() {
             data: {
                 metodo: "criarUsuario",
                 nome: nome,
-                email: email,
+                login: login,
                 senha: senha,
                 tipo: tipo,
                 cliente: cliente,
@@ -41,7 +41,7 @@ $(document).ready(function() {
         e.preventDefault();
         var usuario = $("#usuario").val();
         var nome = $("#nome").val();
-        var email = $("#email").val();
+        var login = $("#login").val();
         var senha = $("#senha").val();
         var tipo = $("#tipo").val();
         var cliente = $("#cliente").val();
@@ -52,7 +52,7 @@ $(document).ready(function() {
                 metodo: "editarUsuario",
                 id: usuario,
                 nome: nome,
-                email: email,
+                login: login,
                 senha: senha,
                 tipo: tipo,
                 cliente: cliente,

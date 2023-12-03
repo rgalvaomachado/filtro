@@ -4,16 +4,16 @@
     class UsuarioModel extends Database{
         public $id;
         public $nome;
-        public $email;
+        public $login;
         public $senha;
         public $tipo;
         public $cliente;
 
         function criar(){
-            $criar = $this->bd->prepare('INSERT INTO usuario (nome,email,senha,tipo,cliente) VALUES(:nome,:email,:senha,:tipo,:cliente)');
+            $criar = $this->bd->prepare('INSERT INTO usuario (nome,login,senha,tipo,cliente) VALUES(:nome,:login,:senha,:tipo,:cliente)');
             $criar->execute([
                 ':nome' => $this->nome,
-                ':email' => $this->email,
+                ':login' => $this->login,
                 ':senha' => $this->senha,
                 ':tipo' => $this->tipo,
                 ':cliente' => $this->cliente,
@@ -36,11 +36,11 @@
         }
 
         function editar(){
-            $editar = $this->bd->prepare('UPDATE usuario SET nome = :nome, email = :email, senha = :senha, tipo = :tipo, cliente = :cliente WHERE id = :id');
+            $editar = $this->bd->prepare('UPDATE usuario SET nome = :nome, login = :login, senha = :senha, tipo = :tipo, cliente = :cliente WHERE id = :id');
             $editar->execute([
               ':id'   => $this->id,
               ':nome' => $this->nome,
-              ':email' => $this->email,
+              ':login' => $this->login,
               ':senha' => $this->senha,
               ':tipo' => $this->tipo,
               ':cliente' => $this->cliente,

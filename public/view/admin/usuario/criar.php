@@ -21,7 +21,7 @@
             <label>Email</label>
             <br>
             <br>
-            <input class="input" type="email" id="email">
+            <input class="input" type="login" id="login">
             <br>
             <label>Senha</label>
             <br>
