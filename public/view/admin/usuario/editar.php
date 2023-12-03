@@ -29,7 +29,7 @@
 			</br>
 			<input class='input' name="nome" id="nome" value="<?php echo $usuario->nome?>">
 			</br>
-			<label>Email</label>
+			<label>Login</label>
 			</br>
 			<input class='input' name="login" id="login" value="<?php echo $usuario->login?>">
 			</br>

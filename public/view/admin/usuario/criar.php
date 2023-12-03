@@ -18,7 +18,7 @@
             <br>
             <input class="input" id="nome">
             <br>
-            <label>Email</label>
+            <label>Login</label>
             <br>
             <br>
             <input class="input" type="login" id="login">
