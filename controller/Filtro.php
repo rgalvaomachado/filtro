@@ -41,7 +41,7 @@
 
         function criar($post){
             $uniqid = uniqid();
-            $path = 'public/filtro/'.$uniqid.'.png';
+            $path = $_ENV['DIRECTORY_FILTROS'].$uniqid.'.png';
 
             $img = $post['filtro'];
             $img = str_replace('data:image/png;base64,', '', $img);
@@ -92,7 +92,7 @@
             $FiltroModel->id = $post['id'];
             $deletado = $FiltroModel->deletar();
             if ($deletado){
-                unlink('public/filtro/'.$post['uniqid'].'.png');
+                unlink($_ENV['DIRECTORY_FILTROS'].$post['uniqid'].'.png');
                 return json_encode([
                     "access" => true,
                     "message" => "Deletado com sucesso"

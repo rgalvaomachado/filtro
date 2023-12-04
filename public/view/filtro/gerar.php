@@ -5,11 +5,14 @@
 </head>
 <?php
     switch($_GET['tipo']){
+        case '1':
+            $class = "story";
+            break;
         case '2':
-            $class = "quadrado";
+            $class = "post_quadrado";
             break;
         case '3':
-            $class = "vertical";
+            $class = "post_vertical";
             break;
         default:
             $class = "default";
@@ -24,7 +27,7 @@
             <input type="hidden" id='uniqidFiltro' value="<?php echo $_GET['filtro']?>">
             <input type="hidden" id='tipo' value="<?php echo $_GET['tipo']?>">
             <label id="upload" for="upload_in">
-                <img id="img-upload" src="../filtro/<?php echo $_GET['filtro']?>.png">
+                <img id="img-upload" src="<?php echo $_ENV['DIRECTORY_FILTROS'].$_GET['filtro']?>.png">
             </label>
         </div>
         <br>

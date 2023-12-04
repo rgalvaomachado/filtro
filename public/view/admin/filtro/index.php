@@ -47,13 +47,13 @@
                             <?php
                                 switch($filtro->tipo){
                                     case '1':
-                                        echo "Destaque";
+                                        echo "Story";
                                         break;
                                     case '2':
-                                        echo "Quadrado";
+                                        echo "Post Quadrado";
                                         break;
                                     case '3':
-                                        echo "Vertical";
+                                        echo "Post Vertical";
                                         break;
                                     default:
                                         echo 'Tipo não encontrado';

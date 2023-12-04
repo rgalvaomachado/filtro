@@ -6,8 +6,9 @@
     $routesView = [
         // [PATH, VIEW],
         ['login','public/view/login/index.php'],
-        ['home','public/view/home/index.php'],
-        ['filtro','public/view/filtro/index.php'],
+
+        ['home','public/view/filtro/home.php'],
+        ['filtro','public/view/filtro/gerar.php'],
 
         ['admin/home','public/view/admin/home/index.php'],
 

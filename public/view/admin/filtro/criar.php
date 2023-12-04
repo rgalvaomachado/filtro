@@ -24,9 +24,9 @@
             <label>Tipo</label>
             <br>
             <select class="input" id="tipo">
-                <option value="1">Destaque</option>
-                <option value="2">Quadrado</option>
-                <option value="3">Vertical</option>
+                <option value="1">Story</option>
+                <option value="2">Post Quadrado</option>
+                <option value="3">Post Vertical</option>
             </select>
             <br>
             <label>Cliente</label>
