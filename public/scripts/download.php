@@ -1,5 +1,5 @@
 <?php
-    $file = 'tmp/'.$_GET['uniqid_tmp'].'.png';
+    $file = 'tmp/'.$_POST['uniqid_tmp'].'.png';
     header('Content-Description: File Transfer');
     header('Content-Type: application/octet-stream');
     header('Content-Disposition: attachment; filename='.basename($file));
@@ -10,5 +10,4 @@
     ob_clean();
     flush();
     readfile($file);
-    unlink($file);
 ?>

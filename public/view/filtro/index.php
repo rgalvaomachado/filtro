@@ -17,9 +17,9 @@
     }
     
 ?>
-<div class="preview <?php echo $class ?>" style="<?php ?>">
+<div class="preview">
     <form id="fileinfo" enctype="multipart/form-data">
-        <div id="html-content-holder">
+        <div id="html-content-holder" class="<?php echo $class ?>">
             <input type="file" name="file" id="upload_in" onchange="previewFile()" style="display: none;"/>
             <input type="hidden" id='uniqidFiltro' value="<?php echo $_GET['filtro']?>">
             <input type="hidden" id='tipo' value="<?php echo $_GET['tipo']?>">
@@ -27,6 +27,15 @@
                 <img id="img-upload" src="../filtro/<?php echo $_GET['filtro']?>.png">
             </label>
         </div>
-        <button id="btn_convert" class="btn btn-lg">Criar Imagem</button>
+        <br>
+        <button id="btn_convert" type="submit" class="btn btn-lg">Criar Imagem</button>
     </form>
+    <img id="load" src="/public/img/load.gif">
+
+    <form id="download" action="public/scripts/download.php" method="post">
+        <input type="hidden" name='uniqid_tmp' id='uniqid_tmp'>
+        <button class="btn btn-lg" type="submit" id="btn_download" value="Download">Download!</button>
+    </form>
+
+    <button id="btn_back" type="button" class="btn btn-lg" onclick="voltar()">Voltar</button>
 </div>

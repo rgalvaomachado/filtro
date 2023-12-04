@@ -1,4 +1,10 @@
-div.preview img {
+.preview {
+    width: 500px;
+    height: 500px;
+    padding: 0;
+}
+
+#img-upload {
     width: 100%;
     background-image: url(../../img/choice-img.png);
     background-color: var(--cor-principal-dark);
@@ -7,21 +13,13 @@ div.preview img {
     background-position: center;
 }
 
-button.btn{
+.btn{
     color: white;
     background-color: var(--cor-principal);
     border: none;
     font-family: Arial;
     font-weight: 600;
-    width: 60%;
-    margin-bottom: 20px;
-}
-
-.preview {
-    width: 500px;
-    height: 500px;
-    text-align: center;
-    padding: 0;
+    width: 270px;
 }
 
 .quadrado{
@@ -34,4 +32,18 @@ button.btn{
     width: 270px;
     height: 480px;
     background-color: rgb(23, 26, 21);
+}
+
+#load{
+    width: 150px;
+    margin-left: 70px;
+    display: none;
+}
+
+#btn_convert{
+    display: none;
+}
+
+#btn_download{
+    display: none;
 }

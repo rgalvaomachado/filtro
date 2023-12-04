@@ -1,5 +1,7 @@
 $(document).ready(function() {
     $('#fileinfo').submit(function(e) {
+        $('#btn_convert').hide();
+        $('#load').show();
         e.preventDefault();
         $("#downloadFiltro").hide();
         var uniqidFiltro = $("#uniqidFiltro").val();
@@ -21,22 +23,9 @@ $(document).ready(function() {
                 complete: function(response) {
                     var response = JSON.parse(response.responseText);
                     if(response.access){
-                        let filepath = 'tmp/'+response.uniqid_tmp+'.png';
-                        downloadFile(filepath, response.uniqid_tmp+'.png')
-                        $.ajax({
-                            method: "POST",
-                            url: "/controller/Controller.php",
-                            data: {
-                                metodo: "deletarImagem",
-                                uniqidFiltro: response.uniqid_tmp,
-                            },
-                            complete: function(response) {
-                                var response = JSON.parse(response.responseText);
-                                if(response.access){
-                                    window.location.assign("/")
-                                }
-                            }
-                        });
+                        $('#uniqid_tmp').val(response.uniqid_tmp);
+                        $('#load').hide();
+                        $('#btn_download').show()
                     }
                 }
             });
@@ -54,22 +43,32 @@ function previewFile() {
     }
     if (file) {
         reader.readAsDataURL(file);
+        $('#btn_convert').show();
+        $('#btn_download').hide();
     } else {
         preview.style.backgroundImage = "url('../../../../img/choice-img.png')";
     }
 }
 
-function downloadFile(url, fileName){
-  fetch(url, { method: 'get', mode: 'no-cors', referrerPolicy: 'no-referrer' })
-    .then(res => res.blob())
-    .then(res => {
-      const aElement = document.createElement('a');
-      aElement.setAttribute('download', fileName);
-      const href = URL.createObjectURL(res);
-      aElement.href = href;
-      aElement.setAttribute('href', href);
-      aElement.setAttribute('target', '_blank');
-      aElement.click();
-      URL.revokeObjectURL(href);
-    });
-};
+function voltar() {
+    let uniqid_tmp = $('#uniqid_tmp').val();
+    console.log(uniqid_tmp);
+    if(uniqid_tmp != ''){
+        $.ajax({
+            method: "POST",
+            url: "/controller/Controller.php",
+            data: {
+                metodo: "deletarImagem",
+                uniqidFiltro: uniqid_tmp,
+            },
+            complete: function(response) {
+                var response = JSON.parse(response.responseText);
+                if(response.access){
+                   window.location.assign("/");
+                }
+            }
+        });  
+    }else{
+        window.location.assign("/");
+    }
+}
