@@ -80,6 +80,16 @@ class Imagem{
         return $uniqid_tmp;
     }
 
+    public function deletar($post){
+        $uniqidFiltro = $post['uniqidFiltro'];
+        $file = 'tmp/'.$uniqidFiltro.'.png';
+        unlink($file);
+        return json_encode([
+            "access" => true,
+            "message" => "Imagem deletada com sucesso",
+        ]);
+    }
+
     public function criar($post){
         switch($post['tipo']){
             case '1':

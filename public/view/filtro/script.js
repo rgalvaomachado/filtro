@@ -21,7 +21,22 @@ $(document).ready(function() {
                 complete: function(response) {
                     var response = JSON.parse(response.responseText);
                     if(response.access){
-                        window.location.assign("download?uniqid_tmp="+response.uniqid_tmp)
+                        let filepath = 'tmp/'+response.uniqid_tmp+'.png';
+                        downloadFile(filepath, response.uniqid_tmp+'.png')
+                        $.ajax({
+                            method: "POST",
+                            url: "/controller/Controller.php",
+                            data: {
+                                metodo: "deletarImagem",
+                                uniqidFiltro: response.uniqid_tmp,
+                            },
+                            complete: function(response) {
+                                var response = JSON.parse(response.responseText);
+                                if(response.access){
+                                    window.location.assign("/")
+                                }
+                            }
+                        });
                     }
                 }
             });
@@ -43,3 +58,18 @@ function previewFile() {
         preview.style.backgroundImage = "url('../../../../img/choice-img.png')";
     }
 }
+
+function downloadFile(url, fileName){
+  fetch(url, { method: 'get', mode: 'no-cors', referrerPolicy: 'no-referrer' })
+    .then(res => res.blob())
+    .then(res => {
+      const aElement = document.createElement('a');
+      aElement.setAttribute('download', fileName);
+      const href = URL.createObjectURL(res);
+      aElement.href = href;
+      aElement.setAttribute('href', href);
+      aElement.setAttribute('target', '_blank');
+      aElement.click();
+      URL.revokeObjectURL(href);
+    });
+};

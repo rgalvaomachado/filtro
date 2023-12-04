@@ -21,6 +21,10 @@
             $class = new Imagem();
             $response = $class->criar($_POST);
             break;
+        case 'deletarImagem':
+            $class = new Imagem();
+            $response = $class->deletar($_POST);
+            break;
         ////////////////////////////////////////////////////////////////////////////////////////////////////////
         case 'criarFiltro':
             $class = new FiltroController();
