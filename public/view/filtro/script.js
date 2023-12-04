@@ -1,6 +1,7 @@
 $(document).ready(function() {
     $('#fileinfo').submit(function(e) {
         $('#btn_convert').hide();
+        $('#btn_back').hide();
         $('#load').show();
         e.preventDefault();
         $("#downloadFiltro").hide();
@@ -26,6 +27,7 @@ $(document).ready(function() {
                         $('#uniqid_tmp').val(response.uniqid_tmp);
                         $('#load').hide();
                         $('#btn_download').show()
+                        $('#btn_back').show();
                     }
                 }
             });

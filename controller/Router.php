@@ -63,6 +63,12 @@
                     header ('Content-Type: image/png');
                     header ("Content-length: $size");
                     echo $c;
+                } else if ($extension == 'gif'){
+                    $c = file_get_contents($path,true);
+                    $size = filesize($path);
+                    header ('Content-Type: image/gif');
+                    header ("Content-length: $size");
+                    echo $c;
                 }else{
                     if($path){
                         include_once $path;
