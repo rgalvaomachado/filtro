@@ -67,6 +67,9 @@
     }
 }
 
+#post, #story{
+    padding-left: 50px;
+}
 .post_quadrado{
     width: 270px;
     background-color: rgb(31, 49, 49);
