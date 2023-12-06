@@ -32,7 +32,7 @@
             $UsuarioModel = new UsuarioModel();
             $UsuarioModel->nome = $post['nome'];
             $UsuarioModel->login = $post['login'];
-            $UsuarioModel->senha = $post['senha'];
+            $UsuarioModel->senha = base64_encode($post['senha']);
             $UsuarioModel->tipo = $post['tipo'];
             $UsuarioModel->cliente = $post['cliente'] != '' ? $post['cliente'] : 0;
 
@@ -56,7 +56,7 @@
             $UsuarioModel->id = $post['id'];
             $UsuarioModel->nome = $post['nome'];
             $UsuarioModel->login = $post['login'];
-            $UsuarioModel->senha = $post['senha'];
+            $UsuarioModel->senha = base64_encode($post['senha']);
             $UsuarioModel->tipo = $post['tipo'];
             $UsuarioModel->cliente = $post['cliente'] != '' ? $post['cliente'] : 0;
             $id = $UsuarioModel->editar();

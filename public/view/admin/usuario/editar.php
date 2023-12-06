@@ -35,7 +35,7 @@
 			</br>
 			<label>Senha</label>
 			</br>
-			<input class='input' type="password" tyname="senha" id="senha" value="<?php echo $usuario->senha?>">
+			<input class='input' type="password" tyname="senha" id="senha" value="<?php echo base64_decode($usuario->senha);?>">
 			</br>
 			<label>Tipo</label>
             <br>

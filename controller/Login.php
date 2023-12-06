@@ -3,7 +3,7 @@
     class LoginController{
         public function login($post){
             $login = $post['login'];
-            $senha = $post['senha'];
+            $senha = base64_encode($post['senha']);
             $validado = false;
 
             $UsuarioController = new UsuarioController();
