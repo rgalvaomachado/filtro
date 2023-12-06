@@ -52,13 +52,13 @@
         <?php } 
     ?>
 
-    <div id="story">
-        <?php
-            $Filtro = new FiltroController();
-            $story = $Filtro->buscarTipoCliente(['tipo' => '1', 'cliente' => $_SESSION['cliente']]);
-            $s = json_decode($story);
-            if(count($s->filtros) > 0){ ?>
-                <h2>Story</h2>
+    <?php
+        $Filtro = new FiltroController();
+        $story = $Filtro->buscarTipoCliente(['tipo' => '1', 'cliente' => $_SESSION['cliente']]);
+        $s = json_decode($story);
+        if(count($s->filtros) > 0){ ?>
+            <h2>Story</h2>
+            <div id="story">
                 <div class="grid-container">
                     <?php foreach ($s->filtros as $filtro){ ?>
                         <div class="grid-item">
@@ -68,9 +68,9 @@
                         </div>
                     <?php } ?> 
                 </div>
-            <?php } 
-        ?>
-    </div>
+            </div>
+        <?php } 
+    ?>
 </div>
 
 <?php //include_once('public/footer.php'); ?>
