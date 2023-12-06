@@ -4,30 +4,33 @@ class Imagem{
 
     public function criarImagem($image, $uniqidFiltro, $image_width, $image_height){
         // SALVAR IMAGEM
-        $base64_string = $image;
-        $data = explode( ',', $base64_string );
+        $uniqid_tmp = uniqid();
+        $output_file = 'tmp/'.$uniqid_tmp.'.png';
+
+        $data = explode(',', $image);
         $base64_img     = str_replace(' ', '+',$data[1]);
-        $data           = base64_decode($base64_img);
+        $source_gdim = imagecreatefromstring(base64_decode($base64_img));
 
-        $output_file = 'tmp/'.uniqid().'.png';
-        file_put_contents($output_file, $data);
-        $prop_file = getimagesize($output_file);
-
-
-        //TRATAR IMG
-        switch ($prop_file['mime']) {
-            case 'image/jpeg':
-                $source_gdim = imagecreatefromjpeg($output_file);
-                break;
-            case 'image/png':
-                $source_gdim = imagecreatefrompng($output_file);
-                break;
-            default:
-                echo 'tipo nao encontrado';
-                break;
+        // FIX ROTAÇAO iOS
+        $read = '8192';
+        while (!$exif = @exif_read_data('data://image/jpeg;base64,' . substr($base64_img, 0, $read))) {
+            $read += $read;
         }
-        unlink($output_file);
+        if(!empty($exif['Orientation'])) {
+            switch($exif['Orientation']) {
+                case 8:
+                    $source_gdim = imagerotate($source_gdim,90,0);
+                    break;
+                case 3:
+                    $source_gdim = imagerotate($source_gdim,180,0);
+                    break;
+                case 6:
+                    $source_gdim = imagerotate($source_gdim,-90,0);
+                    break;
+            }
+        }
 
+        // TRATAR IMAGEM
         $source_width = imagesx($source_gdim);
         $source_height = imagesy($source_gdim);
 
@@ -57,27 +60,49 @@ class Imagem{
         $imagem_tirada = imagecreatetruecolor($image_width, $image_height);
 
         imagecopy($imagem_tirada,$temp_gdim,0, 0,$x0,$y0,$image_width, $image_height);
-
+        
         //JUNTA FILTRO E IMG
         $TempPngFile = imagecreatetruecolor($image_width, $image_height);
         $img1 = imageCreateFromPng($_ENV['DIRECTORY_FILTROS'].$uniqidFiltro.'.png');
         imagecopy($TempPngFile, $imagem_tirada, 0, 0, 0, 0, imagesx($imagem_tirada), imagesy($imagem_tirada));
         imagecopy($TempPngFile, $img1, 0, 0, 0, 0, imagesx($img1), imagesy($img1));
-
-        //SALVA TMP
-        ob_start();  
-        imagepng($TempPngFile);
-        $imagedata = ob_get_clean();
-        
-        $base64_img     = str_replace('data:image/png;base64,', '', base64_encode($imagedata));
-        $base64_img     = str_replace(' ', '+', $base64_img);
-        $data           = base64_decode($base64_img);
-
-        $uniqid_tmp = uniqid();
-        $path_tmp = 'tmp/'.$uniqid_tmp.'.png';
-        file_put_contents($path_tmp, $data);
+        imagepng($TempPngFile, $output_file);
 
         return $uniqid_tmp;
+    }
+
+    function corrigeOrientacao($filename){
+        $exif = exif_read_data($filename);
+        $rotation = null;
+
+        if (!empty($exif['Orientation'])) {
+            switch ($exif['Orientation'])
+            {
+                case 3:
+                    $rotation = 180;
+                    break;
+
+                case 6:
+                    $rotation = -90;
+                    break;
+
+                case 8:
+                    $rotation = 90;
+                    break;
+            }
+        }
+
+        if ($rotation !== null) {
+            $target = imagecreatefrompng($filename);
+            $target = imagerotate($target, $rotation, 0);
+
+            //Salva por cima da imagem original
+            imagejpeg($target, $filename);
+
+            //libera da memória
+            imagedestroy($target);
+            $target = null;
+        }
     }
 
     public function deletar($post){
