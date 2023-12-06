@@ -50,6 +50,8 @@
                     return $RouteView;
                 }
             }
+
+            return '404.html';
         }
 
         function run($routes){
@@ -70,11 +72,7 @@
                     header ("Content-length: $size");
                     echo $c;
                 }else{
-                    if($path){
-                        include_once $path;
-                    } else {
-                        include_once ('404.html');
-                    }
+                    include_once $path;
                 }
             }
         }

@@ -45,13 +45,13 @@ footer>a{
     font-size: 20px;
     padding-left: 15px;
     padding-right: 15px;
-  }
-  
-  input:focus {
+}
+
+input:focus {
     outline-color: #004fde;
-  }
-  
-  .button{
+}
+
+.button{
     background-color: #004fde;
     color:#ffffff;
     border: solid 1px #ffffff;
@@ -61,13 +61,18 @@ footer>a{
     padding-left: 15px;
     padding-right: 15px;
     width: 200px;
-  }
-  
-  .button:hover{
+}
+
+.button:hover{
     background-color: #ffffff;
     color: #004fde;
     border: solid 1px #004fde;
-  }
+}
+
+#ops{
+    margin-top: 100px;
+    text-align: center;
+}
 
 /*Desktop*/
 @media (min-width: 1024px) {
