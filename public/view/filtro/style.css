@@ -1,7 +1,13 @@
 .preview {
-    width: 500px;
+    width: 100%;
     height: 500px;
-    padding: 0;
+    margin: auto;
+    text-align: center;
+    margin-top: 5%;
+}
+
+#fileinfo{
+    display: inline-block;
 }
 
 #img-upload {

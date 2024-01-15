@@ -20,6 +20,12 @@
     }
     
 ?>
+
+<div id="top">
+    <img src="/public/img/hubis-colorido.png" id="logo-hubis">
+    <a id="logout"><i class="fa fa-sign-out" aria-hidden="true" onclick="logout()"></i></a>
+</div>
+
 <div class="preview">
     <form id="fileinfo" enctype="multipart/form-data">
         <div id="html-content-holder" class="<?php echo $class ?>">
