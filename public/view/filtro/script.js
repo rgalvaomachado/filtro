@@ -1,40 +1,37 @@
-$(document).ready(function() {
-    $('#fileinfo').submit(function(e) {
-        $('#btn_convert').hide();
-        $('#btn_back').hide();
-        $('#load').show();
-        e.preventDefault();
-        $("#downloadFiltro").hide();
-        var uniqidFiltro = $("#uniqidFiltro").val();
-        var tipo = $("#tipo").val();
-        var filesSelected = document.getElementById("upload_in").files;
-        var fileToLoad = filesSelected[0];
-        var fileReader = new FileReader();
-        fileReader.onload = function(fileLoadedEvent) {
-            var imagem = fileLoadedEvent.target.result
-            $.ajax({
-                method: "POST",
-                url: "/controller/Controller.php",
-                data: {
-                    metodo: "criarImagem",
-                    uniqidFiltro: uniqidFiltro,
-                    tipo: tipo,
-                    imagem: imagem,
-                },
-                complete: function(response) {
-                    var response = JSON.parse(response.responseText);
-                    if(response.access){
-                        $('#uniqid_tmp').val(response.uniqid_tmp);
-                        $('#load').hide();
-                        $('#btn_download').show()
-                        $('#btn_back').show();
-                    }
+function gerarImagem() {
+    $('#btn_convert').hide();
+    $('#btn_back').hide();
+    $('#load').show();
+    $("#downloadFiltro").hide();
+    var uniqidFiltro = $("#uniqidFiltro").val();
+    var tipo = $("#tipo").val();
+    var filesSelected = document.getElementById("upload_in").files;
+    var fileToLoad = filesSelected[0];
+    var fileReader = new FileReader();
+    fileReader.onload = function(fileLoadedEvent) {
+        var imagem = fileLoadedEvent.target.result
+        $.ajax({
+            method: "POST",
+            url: "/controller/Controller.php",
+            data: {
+                metodo: "criarImagem",
+                uniqidFiltro: uniqidFiltro,
+                tipo: tipo,
+                imagem: imagem,
+            },
+            complete: function(response) {
+                var response = JSON.parse(response.responseText);
+                if(response.access){
+                    $('#uniqid_tmp').val(response.uniqid_tmp);
+                    $('#load').hide();
+                    $('#btn_download').show()
+                    $('#btn_back').show();
                 }
-            });
-        }
-        fileReader.readAsDataURL(fileToLoad);
-    })
-});
+            }
+        });
+    }
+    fileReader.readAsDataURL(fileToLoad);
+}
 
 function previewFile() {
     var preview = document.querySelector('#img-upload');

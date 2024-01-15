@@ -36,15 +36,13 @@
                 <img id="img-upload" src="<?php echo $_ENV['DIRECTORY_FILTROS'].$_GET['filtro']?>.png">
             </label>
         </div>
-        <br>
-        <button id="btn_convert" type="submit" class="btn btn-lg">Criar Imagem</button>
     </form>
+    <br>
+    <button id="btn_convert" onclick="gerarImagem()" class="btn btn-lg">Criar Imagem</button>
     <img id="load" src="/public/img/load.gif">
-
     <form id="download" action="public/scripts/download.php" method="post">
         <input type="hidden" name='uniqid_tmp' id='uniqid_tmp'>
-        <button class="btn btn-lg" type="submit" id="btn_download" value="Download">Download!</button>
+        <button class="btn btn-lg" onclick="downloadImagem()" id="btn_download" value="Download">Download!</button>
     </form>
-
     <button id="btn_back" type="button" class="btn btn-lg" onclick="voltar()">Voltar</button>
 </div>
