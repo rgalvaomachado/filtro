@@ -12,7 +12,7 @@ $(document).ready(function() {
             var filtro = fileLoadedEvent.target.result;
             $.ajax({
                 method: "POST",
-                url: "/controller/Controller.php",
+                url: "/src/controller/Controller.php",
                 data: {
                     metodo: "criarFiltro",
                     nome: nome,
@@ -47,7 +47,7 @@ $(document).ready(function() {
     //     var nome = $("#nome").val();
     //     $.ajax({
     //         method: "POST",
-    //         url: "/controller/Controller.php",
+    //         url: "/src/controller/Controller.php",
     //         data: {
     //             metodo: "editarCliente",
     //             id: filtro,
@@ -79,7 +79,7 @@ $(document).ready(function() {
         var uniqid = $("#uniqid").val();
         $.ajax({
             method: "POST",
-            url: "/controller/Controller.php",
+            url: "/src/controller/Controller.php",
             data: {
                 metodo: "deletarFiltro",
                 id: filtro,

@@ -1,6 +1,6 @@
 <?php
-    include_once('controller/Filtro.php');
-    include_once('controller/Cliente.php');
+    include_once('src/controller/Filtro.php');
+    include_once('src/controller/Cliente.php');
 ?>
 <head>
     <link href="public/view/admin/filtro/style.css" rel="stylesheet">

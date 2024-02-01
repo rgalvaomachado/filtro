@@ -1,5 +1,5 @@
 <?php
-    include_once('controller/Usuario.php')
+    include_once('src/controller/Usuario.php')
 ?>
 <head>
     <link href="public/view/admin/usuario/style.css" rel="stylesheet">

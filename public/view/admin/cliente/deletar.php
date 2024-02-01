@@ -4,7 +4,7 @@
         header("Location: /admin/cliente");
         die();
     }
-	include_once('controller/Cliente.php')
+	include_once('src/controller/Cliente.php')
 ?>
 <head>
     <link href="public/view/admin/cliente/style.css" rel="stylesheet">

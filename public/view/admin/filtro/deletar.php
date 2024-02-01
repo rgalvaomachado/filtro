@@ -4,7 +4,7 @@
         header("Location: /admin/filtro");
         die();
     }
-	include_once('controller/Filtro.php')
+	include_once('src/controller/Filtro.php')
 ?>
 <head>
     <link href="public/view/admin/filtro/style.css" rel="stylesheet">

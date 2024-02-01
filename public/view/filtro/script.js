@@ -12,7 +12,7 @@ function gerarImagem() {
         var imagem = fileLoadedEvent.target.result
         $.ajax({
             method: "POST",
-            url: "/controller/Controller.php",
+            url: "/src/controller/Controller.php",
             data: {
                 metodo: "criarImagem",
                 uniqidFiltro: uniqidFiltro,
@@ -55,7 +55,7 @@ function voltar() {
     if(uniqid_tmp != ''){
         $.ajax({
             method: "POST",
-            url: "/controller/Controller.php",
+            url: "/src/controller/Controller.php",
             data: {
                 metodo: "deletarImagem",
                 uniqidFiltro: uniqid_tmp,
@@ -75,7 +75,7 @@ function voltar() {
 function logout(){
     $.ajax({
         method: "POST",
-        url: "/controller/Controller.php",
+        url: "/src/controller/Controller.php",
         data: {
             metodo: "logout"
         },

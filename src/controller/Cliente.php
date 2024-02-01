@@ -1,5 +1,5 @@
 <?php
-    include_once('model/Cliente.php');
+    include_once('src/model/Cliente.php');
 
     class ClienteController{
         function buscarTodos($post){

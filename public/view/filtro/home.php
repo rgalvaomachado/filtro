@@ -1,5 +1,5 @@
 <?php
-    include_once('controller/Filtro.php');
+    include_once('src/controller/Filtro.php');
 ?>
 <head>
     <link href="/public/view/filtro/style.css" rel="stylesheet">

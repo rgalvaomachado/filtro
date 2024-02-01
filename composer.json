@@ -1,0 +1,14 @@
+{
+    "name": "rgalv/filtro",
+    "autoload": {
+        "psr-4": {
+            "Rgalv\\Filtro\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "rgalvaomachado@gmail.com"
+        }
+    ],
+    "require": {}
+}

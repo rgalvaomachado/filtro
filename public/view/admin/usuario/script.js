@@ -8,7 +8,7 @@ $(document).ready(function() {
         var cliente = $("#cliente").val();
         $.ajax({
             method: "POST",
-            url: "/controller/Controller.php",
+            url: "/src/controller/Controller.php",
             data: {
                 metodo: "criarUsuario",
                 nome: nome,
@@ -47,7 +47,7 @@ $(document).ready(function() {
         var cliente = $("#cliente").val();
         $.ajax({
             method: "POST",
-            url: "/controller/Controller.php",
+            url: "/src/controller/Controller.php",
             data: {
                 metodo: "editarUsuario",
                 id: usuario,
@@ -82,7 +82,7 @@ $(document).ready(function() {
         var usuario = $("#usuario").val();
         $.ajax({
             method: "POST",
-            url: "/controller/Controller.php",
+            url: "/src/controller/Controller.php",
             data: {
                 metodo: "deletarUsuario",
                 id: usuario,

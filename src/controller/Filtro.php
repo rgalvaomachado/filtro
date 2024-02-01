@@ -1,5 +1,5 @@
 <?php
-    include_once('model/Filtro.php');
+    include_once('src/model/Filtro.php');
 
     class FiltroController{
         function buscarTodos($post){
